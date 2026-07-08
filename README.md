@@ -34,6 +34,8 @@
 
 ## 🏗️ System Architecture
 
+![Architecture Infographic](assets/infographic.jpg)
+
 ```mermaid
 graph TD
     User([Healthcare Professional]) -->|HTTPS| ReactFrontend[React 18 SPA]
