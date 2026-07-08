@@ -81,6 +81,11 @@ The application will be accessible at:
 - **Llama 3 (via Ollama)**: The core Large Language Model that drives the multi-agent chatbot and clinical roadmap generation, specifically tuned for medical reasoning.
 - **ClinicalBERT**: Used within the NLP pipeline to accurately extract and contextualize clinical entities from raw text and lab reports.
 
+## Datasets & Sample Data
+To ensure repository performance and comply with data privacy standards (KVKK/GDPR), large datasets and real patient databases are **not** included in this repository.
+- **Full Dataset**: Will be hosted separately on [Kaggle / Hugging Face] (Link coming soon).
+- **Local Testing**: A `sample_data/` directory is provided. You can place your test X-ray images and PDF reports here to safely test the AI models locally without polluting the main directory.
+
 ## Screenshots
 
 *(Placeholders for screenshots)*
