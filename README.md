@@ -107,6 +107,17 @@ To ensure maximum repository performance and comply with data privacy standards,
 - **Full Dataset**: Hosted separately.
 - **Local Testing**: A `sample_data/` directory is provided. You can place your dummy X-ray images and test PDF reports there to safely test the AI pipelines locally without accidentally committing them.
 
+## 📸 Screenshots
+
+### 1. Medical Dashboard
+![Dashboard](assets/dashboard.jpg)
+
+### 2. Radiology AI Analysis
+![Radiology](assets/radiology.jpg)
+
+### 3. Clinical Chatbot & Roadmap
+![Chatbot](assets/chatbot.jpg)
+
 ---
 
 ## 🧪 Running Tests
