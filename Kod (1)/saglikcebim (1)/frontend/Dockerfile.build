@@ -1,0 +1,20 @@
+# Build stage
+FROM node:18-alpine
+
+WORKDIR /app
+
+# Copy package files
+COPY package*.json ./
+
+# Install all dependencies (including devDependencies)
+RUN npm ci --legacy-peer-deps
+
+# Copy source
+COPY . .
+
+# Build with Vite
+RUN npm run build
+
+# Verify build
+RUN ls -la dist/
+

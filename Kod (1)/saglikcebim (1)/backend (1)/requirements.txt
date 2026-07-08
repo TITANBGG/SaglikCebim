@@ -1,0 +1,40 @@
+fastapi>=0.100.0
+uvicorn[standard]>=0.25.0
+pydantic>=2.0.0
+python-multipart
+sqlalchemy>=2.0.0
+aiosqlite>=0.20.0
+psycopg[binary]>=3.1.0
+alembic>=1.13.0
+python-dotenv==1.0.0
+python-jose[cryptography]==3.5.0
+passlib==1.7.4
+email-validator==2.3.0
+aiofiles==25.1.0
+httpx==0.27.2
+pdfplumber==0.11.9
+reportlab==4.4.10
+regex==2026.2.28
+pywebpush==2.3.0
+apscheduler==3.11.2
+py-vapid==1.9.4
+pytest>=9.0.0
+
+# Rate limiting
+slowapi>=0.1.9
+
+# BM25 retrieval
+rank-bm25>=0.2.2
+
+# LLM / AI
+langchain-community>=0.4.0
+langchain-core>=1.4.0
+langchain-ollama>=1.1.0
+
+# Radyoloji AI (CPU-only — GPU için index-url değiştir)
+torch>=2.1.0
+torchvision>=0.16.0
+numpy>=1.24.0
+matplotlib>=3.7.0
+pyyaml>=6.0
+pydicom>=2.4.0

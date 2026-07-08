@@ -1,0 +1,285 @@
+# SİSTEM RAPORU (27.03.2026)
+
+---
+
+## 4. Kullanılan Teknolojiler ve Amaçları
+
+| Katman      | Teknoloji            | Kullanım Amacı ve Açıklama |
+|-------------|----------------------|----------------------------|
+| Backend     | FastAPI              | REST API, hızlı ve modern Python backend |
+| Backend     | SQLAlchemy           | Veritabanı işlemleri ve ORM |
+| Backend     | PostgreSQL           | Üretim veritabanı (Docker ile) |
+| Backend     | SQLite               | Lokal geliştirme veritabanı |
+| Backend     | pdfplumber, reportlab| PDF okuma ve rapor üretimi |
+| Backend     | Pytest               | Otomatik backend testleri |
+| Backend     | JWT, Passlib         | Kimlik doğrulama ve şifre güvenliği |
+| Backend     | Alembic              | Veritabanı migration yönetimi |
+| Backend     | Docker               | Servislerin izole ve taşınabilir çalışması |
+| Frontend    | React 19             | Modern, hızlı ve etkileşimli kullanıcı arayüzü |
+| Frontend    | Vite                 | Hızlı frontend derleme ve geliştirme |
+| Frontend    | Tailwind CSS         | Modern ve kolay stillendirme |
+| Frontend    | Recharts             | Sağlık trendlerini grafikleştirme |
+| Frontend    | PWA                  | Web uygulamasının offline ve mobilde çalışması |
+| Frontend    | JWT                  | Güvenli oturum yönetimi |
+| DevOps      | Docker Compose       | Tüm sistemi tek komutla başlatma |
+
+---
+
+## 5. Projenin Amaçları ve Yetenekleri
+
+- **Amaç:**
+  - Kullanıcıların kan tahlili PDF raporlarını yükleyip otomatik analiz almasını sağlamak.
+  - Sağlık trendlerini ve geçmiş sonuçları görsel olarak takip etmek.
+  - Anormal değerler için bilimsel makale önerileri sunmak.
+  - Kişiye özel öneriler ve sağlık tavsiyeleri sağlamak.
+  - Kullanıcıya bildirim ve haftalık özet göndermek.
+  - Tüm süreci güvenli ve gizli şekilde yönetmek.
+
+- **Başlıca Yetenekler:**
+  - PDF kan tahlili raporlarını otomatik okuma ve analiz
+  - Sonuçları tarihçede grafiklerle gösterme (trend takibi)
+  - Anormal testler için PubMed makale entegrasyonu
+  - Kişisel öneriler (beslenme, yaşam stili, tedavi)
+  - Bildirim ve haftalık özet (Web Push)
+  - Analiz sonuçlarını PDF olarak indirme
+  - JWT tabanlı güvenli oturum ve kullanıcı yönetimi
+  - PWA desteği (offline çalışma, masaüstüne ekleme)
+  - Radyoloji raporları ve bulgularının otomatik analizi (AI destekli)
+  - Tüm sistemin Docker ile kolayca kurulup başlatılması
+
+---
+
+## 1. Docker Bilgisi
+
+Client:
+ Version:    29.2.1
+ Context:    desktop-linux
+ Debug Mode: false
+ Plugins:
+  agent: create or run AI agents (Docker Inc.)
+    Version:  v1.27.1
+    Path:     C:\Program Files\Docker\cli-plugins\docker-agent.exe
+  ai: Docker AI Agent - Ask Gordon (Docker Inc.)
+    Version:  v1.18.0
+    Path:     C:\Program Files\Docker\cli-plugins\docker-ai.exe
+  buildx: Docker Buildx (Docker Inc.)
+    Version:  v0.31.1-desktop.1
+    Path:     C:\Program Files\Docker\cli-plugins\docker-buildx.exe
+  compose: Docker Compose (Docker Inc.)
+    Version:  v5.0.2
+    Path:     C:\Program Files\Docker\cli-plugins\docker-compose.exe
+  debug: Get a shell into any image or container (Docker Inc.)
+    Version:  0.0.47
+    Path:     C:\Program Files\Docker\cli-plugins\docker-debug.exe
+  desktop: Docker Desktop commands (Docker Inc.)
+    Version:  v0.3.0
+    Path:     C:\Program Files\Docker\cli-plugins\docker-desktop.exe
+  extension: Manages Docker extensions (Docker Inc.)
+    Version:  v0.2.31
+    Path:     C:\Program Files\Docker\cli-plugins\docker-extension.exe
+  init: Creates Docker-related starter files for your project (Docker Inc.)
+    Version:  v1.4.0
+    Path:     C:\Program Files\Docker\cli-plugins\docker-init.exe
+  mcp: Docker MCP Plugin (Docker Inc.)
+    Version:  v0.40.1
+    Path:     C:\Program Files\Docker\cli-plugins\docker-mcp.exe
+  model: Docker Model Runner (Docker Inc.)
+    Version:  v1.1.1
+    Path:     C:\Program Files\Docker\cli-plugins\docker-model.exe
+  offload: Docker Offload (Docker Inc.)
+    Version:  v0.5.56
+    Path:     C:\Program Files\Docker\cli-plugins\docker-offload.exe
+  pass: Docker Pass Secrets Manager Plugin (beta) (Docker Inc.)
+    Version:  v0.0.24
+    Path:     C:\Program Files\Docker\cli-plugins\docker-pass.exe
+  sandbox: Docker Sandbox (Docker Inc.)
+    Version:  v0.12.0
+    Path:     C:\Program Files\Docker\cli-plugins\docker-sandbox.exe
+  sbom: View the packaged-based Software Bill Of Materials (SBOM) for an image (Anchore Inc.)
+    Version:  0.6.0
+    Path:     C:\Program Files\Docker\cli-plugins\docker-sbom.exe
+  scout: Docker Scout (Docker Inc.)
+    Version:  v1.20.0
+    Path:     C:\Program Files\Docker\cli-plugins\docker-scout.exe
+
+Server:
+failed to connect to the docker API at npipe:////./pipe/dockerDesktopLinuxEngine; check if the path is correct and if the daemon is running: open //./pipe/dockerDesktopLinuxEngine: Sistem belirtilen dosyayı bulamıyor.
+
+---
+
+## 2. Docker Compose Prod Yapılandırması
+
+name: saglikcebim
+services:
+  backend:
+    build:
+      context: C:\Users\aline\OneDrive\Masaüstü\SaglikCebim\Kod\saglikcebim\backend
+      dockerfile: Dockerfile.prod
+    depends_on:
+      db:
+        condition: service_started
+        required: true
+    deploy:
+      resources:
+        limits:
+          cpus: 2
+          memory: "1073741824"
+        reservations:
+          cpus: 1
+          memory: "536870912"
+    environment:
+      DATABASE_URL: postgresql://saglikcebim_user:saglikcebim_pass@db:5432/saglikcebim
+      PYTHONUNBUFFERED: "1"
+      SECRET_KEY: your-secret-key-change-this-in-production
+      WEB_CONCURRENCY: "2"
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 8000
+        published: "8000"
+        protocol: tcp
+    restart: always
+    volumes:
+      - type: volume
+        source: uploads_data
+        target: /app/uploads
+        volume: {}
+      - type: bind
+        source: C:\Users\aline\OneDrive\Masaüstü\SaglikCebim\Kod\saglikcebim\backend\models
+        target: /app/models
+        read_only: true
+        bind: {}
+  db:
+    deploy:
+      resources:
+        limits:
+          cpus: 1.5
+          memory: "536870912"
+        reservations:
+          cpus: 1
+          memory: "268435456"
+    environment:
+      POSTGRES_DB: saglikcebim
+      POSTGRES_PASSWORD: saglikcebim_pass
+      POSTGRES_USER: saglikcebim_user
+    image: postgres:15
+    networks:
+      default: null
+    restart: always
+    volumes:
+      - type: volume
+        source: postgres_data
+        target: /var/lib/postgresql/data
+        volume: {}
+  frontend:
+    build:
+      context: C:\Users\aline\OneDrive\Masaüstü\SaglikCebim\Kod\saglikcebim\frontend
+      dockerfile: Dockerfile.prod
+    depends_on:
+      backend:
+        condition: service_started
+        required: true
+    deploy:
+      resources:
+        limits:
+          cpus: 1
+          memory: "268435456"
+        reservations:
+          cpus: 0.5
+          memory: "134217728"
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 80
+        published: "80"
+        protocol: tcp
+    restart: always
+networks:
+  default:
+    name: saglikcebim_default
+volumes:
+  postgres_data:
+    name: saglikcebim_postgres_data
+  uploads_data:
+    name: saglikcebim_uploads_data
+
+---
+
+## 3. Windows Sistem Bilgisi
+
+Host Name:                     ALINEBIER
+OS Name:                       Microsoft Windows 11 Pro
+OS Version:                    10.0.26200 N/A Build 26200
+OS Manufacturer:               Microsoft Corporation
+OS Configuration:              Standalone Workstation
+OS Build Type:                 Multiprocessor Free
+Registered Owner:              alinebier138@gmail.com
+Registered Organization:       N/A
+Product ID:                    00331-20210-18393-AA275
+Original Install Date:         26.10.2024, 15:35:11
+System Boot Time:              27.03.2026, 12:45:12
+System Manufacturer:           MONSTER
+System Model:                  ABRA A5 V17.4
+System Type:                   x64-based PC
+Processor(s):                  1 Processor(s) Installed.
+                               [01]: Intel64 Family 6 Model 141 Stepping 1 GenuineIntel ~2304 Mhz
+BIOS Version:                  INSYDE Corp. 1.07.14ITFB8, 4.10.2022
+Windows Directory:             C:\Windows
+System Directory:              C:\Windows\system32
+Boot Device:                   \Device\HarddiskVolume1
+System Locale:                 tr;Türkçe
+Input Locale:                  tr;Türkçe
+Time Zone:                     (UTC+03:00) İstanbul
+Total Physical Memory:         32.547 MB
+Available Physical Memory:     20.095 MB
+Virtual Memory: Max Size:      37.667 MB
+Virtual Memory: Available:     23.889 MB
+Virtual Memory: In Use:        13.778 MB
+Page File Location(s):         C:\pagefile.sys
+Domain:                        WORKGROUP
+Logon Server:                  \\ALINEBIER
+Hotfix(s):                     5 Hotfix(s) Installed.
+                               [01]: KB5066128
+                               [02]: KB5046683
+                               [03]: KB5054156
+                               [04]: KB5079473
+                               [05]: KB5083532
+Network Card(s):               4 NIC(s) Installed.
+                               [01]: Intel(R) Ethernet Connection (14) I219-V
+                                     Connection Name: Ethernet
+                                     DHCP Enabled:    Yes
+                                     DHCP Server:     192.168.1.1
+                                     IP address(es)
+                                     [01]: 192.168.1.111
+                                     [02]: fe80::d57e:a214:42f6:2069
+                                     [03]: 2a02:4e0:2dba:2211:e48e:45c9:9807:1751
+                                     [04]: 2a02:4e0:2dba:2211:829a:bb86:cd9d:ec04
+                               [02]: Intel(R) Wi-Fi 6 AX201 160MHz
+                                     Connection Name: Wi-Fi
+                                     Status:          Media disconnected
+                               [03]: TAP-Windows Adapter V9
+                                     Connection Name: Yerel Ağ Bağlantısı
+                                     Status:          Media disconnected
+                               [04]: WireGuard Tunnel
+                                     Connection Name: Yerel Ağ Bağlantısı 2
+                                     Status:          Media disconnected
+Virtualization-based security: Status: Running
+                               Required Security Properties:
+                                     Base Virtualization Support
+                               Available Security Properties:
+                                     Base Virtualization Support
+                                     DMA Protection
+                                     UEFI Code Readonly
+                                     SMM Security Mitigations 1.0
+                                     Mode Based Execution Control
+                                     APIC Virtualization
+                               Services Configured:
+                                     Hypervisor enforced Code Integrity
+                               Services Running:
+                                     Hypervisor enforced Code Integrity
+                               App Control for Business policy: Enforced
+                               App Control for Business user mode policy: Off
+                               Security Features Enabled:
+Hyper-V Requirements:          A hypervisor has been detected. Features required for Hyper-V will not be displayed.

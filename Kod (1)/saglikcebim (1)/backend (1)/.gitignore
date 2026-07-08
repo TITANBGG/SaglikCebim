@@ -1,0 +1,125 @@
+# ===========================================
+# ENVIRONMENT & SECRETS
+# ===========================================
+.env
+.env.local
+.env.local.backup
+.env.prod
+.env*.local
+.env.*.backup
+
+# ===========================================
+# PYTHON VIRTUAL ENVIRONMENT
+# ===========================================
+venv/
+ENV/
+env/
+.venv
+.Python
+
+# ===========================================
+# PYTHON CACHE & BUILD
+# ===========================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# ===========================================
+# DATABASE FILES
+# ===========================================
+*.db
+*.sqlite
+*.sqlite3
+test.db
+dev.db
+
+# ===========================================
+# TESTING & COVERAGE
+# ===========================================
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+.tox/
+.hypothesis/
+*.cover
+.coverage.*
+
+# ===========================================
+# FILE UPLOADS
+# ===========================================
+uploads/
+uploads/*
+!uploads/.gitkeep
+
+# ===========================================
+# IDE & EDITOR
+# ===========================================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+*.sublime-project
+*.sublime-workspace
+.iml
+.project
+.pydevproject
+.settings/
+.classpath
+
+# ===========================================
+# OS FILES
+# ===========================================
+.DS_Store
+Thumbs.db
+.AppleDouble
+.LSOverride
+._*
+
+# ===========================================
+# LOGS
+# ===========================================
+*.log
+logs/
+
+# ===========================================
+# TEMPORARY FILES
+# ===========================================
+tmp/
+temp/
+*.tmp
+*.bak
+
+# ===========================================
+# POETRY (if used)
+# ===========================================
+poetry.lock
+
+# ===========================================
+# DOCKER
+# ===========================================
+.dockerignore
+
+# ===========================================
+# CLAUDE TEMPORARY FILES
+# ===========================================
+tmpclaude-*

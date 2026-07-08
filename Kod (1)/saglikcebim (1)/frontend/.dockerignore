@@ -1,0 +1,26 @@
+# Dependencies (kurulum sırasında indirilecek)
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Build outputs (dockerfile içinde derlenecek)
+dist/
+dev-dist/
+build/
+
+# Development
+.vscode/
+.idea/
+.DS_Store
+*.swp
+*.swo
+*~
+
+# Environment files
+.env.local
+.env.local.backup
+.env.*.local
+
+# Cache
+.eslintcache
+.cache/

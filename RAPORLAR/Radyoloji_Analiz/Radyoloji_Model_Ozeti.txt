@@ -1,0 +1,32 @@
+DENSENET-121 RADYOLOJI AI - MODEL OZETI
+=================================================
+
+GENEL METRIKLER:
+  * Macro Precision: 0.801 (80.1%)
+  * Macro Recall: 0.810 (81.0%)
+  * Macro F1-Score: 0.802 (80.2%)
+  * Macro AUC-ROC: 0.857
+
+EN IYI PERFORMING (Top 5):
+
+  1. Hernia               - F1: 0.880, AUC: 0.905
+  2. Cardiomegaly         - F1: 0.870, AUC: 0.901
+  3. Effusion             - F1: 0.850, AUC: 0.889
+  4. Consolidation        - F1: 0.840, AUC: 0.881
+  5. Pneumonia            - F1: 0.820, AUC: 0.876
+
+CHALLENGE CLASSES (Bottom 3):
+
+  1. Edema                - F1: 0.750, AUC: 0.821
+  2. Fibrosis             - F1: 0.730, AUC: 0.815
+  3. Emphysema            - F1: 0.710, AUC: 0.798
+
+MODEL DETAYLARI:
+  * Mimarı: DenseNet-121
+  * Egitim Seti: NIH ChestX-ray14 (112K görünütü)
+  * Sinif Sayisi: 14 hastalik
+
+OPTIMIZATION:
+  * Threshold Tipi: Balanced (F1-optimal)
+  * Preprocessing: CLAHE + ImageNet Normalization
+  * Inference: TTA (Test Time Augmentation)

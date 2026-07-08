@@ -1,0 +1,62 @@
+NOTLARIM
+🎯 ÖZGÜNLÜK EKLEYİCİLER Fikir 
+1. OCR EKLENEBİLİR  
+Ne: Telefon fotoğrafından tahlil oku
+Nasıl: Pytesseract + post-processing
+Etki: Gerçekten kullanışlı, demo'da WOW
+2. ML CLASSIFICATION (2-3 hafta, +20 puan)
+Ne: Test kategorilerini otomatik sınıflandır
+Nasıl: Scikit-learn, labeled data
+Etki: Akademik derinlik, metrics gösterebilirsin
+3. ANOMALY DETECTION (1 hafta, +10 puan)
+Ne: Ani değişimlerde uyarı ver
+Nasıl: Z-score, time series analysis
+Etki: Kolay, hızlı, akıllı görünür
+4. GPT API ENTEGRASYONU (1 hafta, +15 puan)
+Ne: Kişiselleştirilmiş açıklamalar
+Nasıl: OpenAI API, prompt engineering
+Etki: Modern, kullanıcı dostu
+5. MOBİL UYGULAMA (2 hafta, +12 puan)
+Ne: React Native ile mobil
+Nasıl: Expo, kamera entegrasyonu
+Etki: Cross-platform, profesyonel
+
+
+Projede ek paramaetreler ve taglar olmalı sayı yetersiz olduğu için her şey için yeterli değil tam kan sayımı için yeterli değil 
+
+
+
+Viladation değer ve test değerleri 
+Metrik	Değer
+Val AUROC (en iyi)	0.8498
+Test AUROC (ortalama)	0.8079
+
+Epoch	Val AUROC	Fark (en iyiden)
+12	0.8498	← En iyi
+13	0.8462	-0.0036
+14	0.8427	-0.0071
+15	0.8435	-0.0063
+16	0.8442	-0.0056
+17	0.8479	-0.0019 → 5. epoch, kesim
+
+model içerik 
+DenseNet-121 modeli NIH ChestX-ray14 veri seti üzerinde başarıyla eğitildi:
+
+112,120 göğüs röntgeni görüntüsü kullanıldı (73.5K eğitim / 13K validasyon / 25.6K test)
+15 epoch eğitim yapıldı (epoch 3-17), epoch 17'de early stopping devreye girdi (5 epoch boyunca iyileşme olmadığı için)
+En iyi model: Epoch 12 — Val AUROC 0.8498
+Test AUROC: 0.8079 (14 patoloji ortalaması)
+En güçlü sınıflar: Emphysema (0.91), Hernia (0.90), Cardiomegaly (0.87)
+En zayıf sınıflar: Infiltration (0.69), Pneumonia (0.73)
+Model dosyası: backend/models/chestxray_best.pt
+
+görsellerde ciddi hatalar var
+
+CLAHE kontrast normalizasyonu, histogram eşitleme ve uygun ön işlmeme 
+veri gürültüsü ! 
+
+
+
+başarı oranları 
+07 03 2026
+Egitim:   3%|▍            | 147/4597 [01:45<56:49,  1.31batch/s, loss=0.4062]

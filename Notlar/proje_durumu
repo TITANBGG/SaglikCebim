@@ -1,0 +1,295 @@
+# 🗺️ PROJEDE KALAN TÜM ADIMLAR
+
+## 📊 BUGÜN KALAN (GÜN 4 - BİTİRİLMELİ)
+
+### ✅ Yapılanlar:
+- Docker Compose ✅
+- PostgreSQL container ✅
+- Backend packages ✅
+- Database config (sorunlu) ⚠️
+
+### ⏳ Kalan (30 dakika):
+
+**1. .env sorununu çöz (10 dk)**
+- .env dosyasını kontrol et/yeniden oluştur
+- `type .env` ile doğrula
+
+**2. Migration oluştur (5 dk)**
+```bash
+alembic revision --autogenerate -m "create users table"
+alembic upgrade head
+```
+
+**3. Kontrol et (5 dk)**
+```bash
+docker exec -it saglikcebim_db psql -U saglikcebim_user -d saglikcebim -c "\dt"
+```
+
+**4. main.py güncelle + test (10 dk)**
+- /db-test endpoint ekle
+- http://localhost:8000/db-test test et
+
+**5. Git commit**
+```bash
+git add .
+git commit -m "add database setup and migrations"
+```
+
+**✅ Gün 4 biter → Hafta 1 %100!**
+
+---
+
+## 📅 HAFTA 2: AUTH SİSTEMİ (5 gün)
+
+### Gün 5-6: Backend Auth (2 gün)
+**Dosyalar:**
+- `backend/app/core/security.py` - Password hashing, JWT
+- `backend/app/api/v1/auth.py` - Register, Login endpoints
+- `backend/app/schemas/user.py` - Pydantic schemas
+
+**Görevler:**
+1. JWT token sistemi
+2. Password hashing (bcrypt)
+3. POST /auth/register
+4. POST /auth/login
+5. GET /auth/me (current user)
+
+---
+
+### Gün 7-8: Frontend Auth (2 gün)
+**Dosyalar:**
+- `frontend/src/pages/Login.jsx`
+- `frontend/src/pages/Register.jsx`
+- `frontend/src/context/AuthContext.jsx`
+- `frontend/src/services/api.js` - Axios setup
+
+**Görevler:**
+1. Login sayfası
+2. Register sayfası
+3. Auth context (state management)
+4. Protected routes
+5. Logout fonksiyonu
+
+---
+
+### Gün 9: Test & Polish (1 gün)
+- Auth flow test
+- Error handling
+- Loading states
+- UI polish
+
+**✅ Hafta 2 biter → %30 ilerleme**
+
+---
+
+## 📅 HAFTA 3: PDF UPLOAD (5 gün)
+
+### Gün 10-11: Backend Upload (2 gün)
+**Dosyalar:**
+- `backend/app/api/v1/reports.py`
+- `backend/app/models/report.py`
+
+**Görevler:**
+1. POST /reports/upload endpoint
+2. File validation (PDF, 10MB)
+3. Report model (database)
+4. File storage
+
+---
+
+### Gün 12-13: Frontend Upload (2 gün)
+**Dosyalar:**
+- `frontend/src/pages/Upload.jsx`
+- `frontend/src/components/FileUpload.jsx`
+
+**Görevler:**
+1. Upload component
+2. Drag & drop (opsiyonel)
+3. Progress bar
+4. Success/error messages
+
+---
+
+### Gün 14: Integration Test (1 gün)
+- End-to-end upload test
+- Error scenarios
+
+**✅ Hafta 3 biter → %45 ilerleme**
+
+---
+
+## 📅 HAFTA 4-5: PDF PARSING (10 gün) ⭐ EN KRİTİK
+
+### Gün 15-17: pdfplumber Setup (3 gün)
+**Dosyalar:**
+- `backend/app/services/pdf_parser.py`
+
+**Görevler:**
+1. pdfplumber kurulum
+2. Text extraction
+3. Basit regex (ilk pattern)
+4. Test PDF'leri topla (5+ adet)
+
+---
+
+### Gün 18-21: Regex Patterns (4 gün)
+**Görevler:**
+1. Pattern 1: `Hemoglobin 13.5 g/dL 12.0-16.0`
+2. Pattern 2: `HGB: 13.5 (g/dL) [12-16]`
+3. Pattern 3: `Test | Value | Unit | Reference`
+4. Pattern 4-5: Diğer formatlar
+
+**Her pattern için:**
+- Regex yaz
+- Test et
+- Refine et
+
+---
+
+### Gün 22-24: Normalization (3 gün)
+**Dosyalar:**
+- `backend/app/services/normalizer.py`
+- `backend/app/data/test_mapping.json`
+
+**Görevler:**
+1. Test ismi mapping (HGB → hemoglobin)
+2. Unit conversion (mg/dL → g/dL)
+3. Reference ranges database
+
+**✅ Hafta 4-5 biter → %70 ilerleme (MVP!)** 🎉
+
+---
+
+## 📅 HAFTA 6: DASHBOARD + REFERANS (5 gün)
+
+### Gün 25-26: Referans Karşılaştırma (2 gün)
+**Dosyalar:**
+- `backend/app/services/analyzer.py`
+- `backend/app/models/reference.py`
+
+**Görevler:**
+1. Referans değerler tablosu
+2. Karşılaştırma logic (low/normal/high)
+3. Açıklama generator (Türkçe)
+
+---
+
+### Gün 27-29: Dashboard Frontend (3 gün)
+**Dosyalar:**
+- `frontend/src/pages/Dashboard.jsx`
+- `frontend/src/components/ReportList.jsx`
+- `frontend/src/components/TestResults.jsx`
+
+**Görevler:**
+1. Rapor listesi
+2. Test sonuçları tablosu
+3. Renk kodlama (yeşil/kırmızı)
+4. Türkçe açıklamalar
+
+**✅ Hafta 6 biter → %85 ilerleme**
+
+---
+
+## 📅 HAFTA 7: GRAFİKLER (5 gün)
+
+### Gün 30-32: Trend Grafikleri (3 gün)
+**Dosyalar:**
+- `frontend/src/components/TrendChart.jsx`
+
+**Görevler:**
+1. Recharts kurulum
+2. Line chart (son 6 rapor)
+3. Referans bandı
+4. Multiple tests
+
+---
+
+### Gün 33-34: UI Polish (2 gün)
+- Responsive design
+- Mobile test
+- UI/UX improvements
+
+**✅ Hafta 7 biter → %90 ilerleme**
+
+---
+
+## 📅 HAFTA 8: PUBMED (OPSİYONEL - 3 gün)
+
+### Gün 35-37: PubMed API (3 gün)
+**Dosyalar:**
+- `backend/app/services/pubmed.py`
+
+**Görevler:**
+1. PubMed API client
+2. ESearch (basit)
+3. Anormal değerde makale göster (3 adet)
+
+**VEYA ATLA → Test & Deploy'a geç**
+
+---
+
+## 📅 HAFTA 9-10: TEST + DEPLOYMENT (10 gün)
+
+### Gün 38-42: Testing (5 gün)
+**Görevler:**
+1. Unit tests (backend - 10+ test)
+2. Integration tests
+3. Frontend tests (opsiyonel)
+4. Bug fixing
+5. Edge cases
+
+---
+
+### Gün 43-47: Deployment + Docs (5 gün)
+**Görevler:**
+1. Docker production config
+2. Environment variables
+3. README güncelle
+4. API documentation (Swagger)
+5. User guide (Türkçe)
+
+**✅ Hafta 10 biter → %100 PROJE TAMAMLANDI!** 🎉
+
+---
+
+## 📊 ÖZET TAKVİM
+
+| Hafta | Ana Görev | İlerleme | Kritiklik |
+|-------|-----------|----------|-----------|
+| 1 | Setup | %20 | ⭐ |
+| 2 | Auth | %30 | ⭐⭐ |
+| 3 | Upload | %45 | ⭐⭐ |
+| 4-5 | PDF Parse | %70 (MVP!) | ⭐⭐⭐ |
+| 6 | Dashboard | %85 | ⭐⭐ |
+| 7 | Grafikler | %90 | ⭐ |
+| 8 | PubMed | %95 | (opsiyonel) |
+| 9-10 | Test+Deploy | %100 | ⭐⭐ |
+
+---
+
+## 🎯 MİLESTONE'LAR
+
+**Milestone 1: Hafta 1 Sonu**
+✅ Altyapı hazır, DB çalışıyor
+
+**Milestone 2: Hafta 2 Sonu**
+✅ Login/Register çalışıyor
+
+**Milestone 3: Hafta 5 Sonu (MVP!) ⭐**
+✅ PDF parse + dashboard = ÇALIŞAN PROJE!
+
+**Milestone 4: Hafta 10 Sonu**
+✅ Production ready, teslime hazır
+
+---
+
+## 💾 BU PLANI KAYDET!
+
+Bu planı yazdır veya PDF yap, her gün bak!
+
+**Bugün:** Gün 4'ü bitir (.env + migration)  
+**Yarın:** Gün 5'e başla (JWT)  
+
+---
+
+**Şimdi .env sorununu çözelim, Gün 4'ü bitirelim! 🚀**

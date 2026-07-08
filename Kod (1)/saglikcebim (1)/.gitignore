@@ -1,0 +1,48 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.Python
+env/
+venv/
+.venv/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Node / frontend
+node_modules/
+dist/
+coverage/
+npm-debug.log*
+.npm/
+
+# IDEs
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment files and local secrets
+.env
+.env.*
+!.env.example
+
+# Databases, uploads, and runtime output
+*.db
+*.sqlite3
+uploads/
+backend_logs/
+logs/
+.runtime/
+
+# Docker / build artifacts
+*.log
+*.pid
+
+# Claude / temporary files
+tmpclaude-*
+tmp/

@@ -1,0 +1,290 @@
+
+    <!DOCTYPE html>
+    <html lang="tr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SağlıkÇebim - Rapor Merkezi</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                color: #333;
+                padding: 20px;
+            }
+            .container {
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+            .header {
+                background: white;
+                border-radius: 12px 12px 0 0;
+                padding: 40px;
+                text-align: center;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            }
+            .header h1 {
+                font-size: 2.5em;
+                color: #667eea;
+                margin-bottom: 10px;
+            }
+            .header p {
+                font-size: 1.1em;
+                color: #6b7280;
+            }
+            .content {
+                background: white;
+                padding: 40px;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            }
+            .reports-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+                gap: 25px;
+                margin: 30px 0;
+            }
+            .report-card {
+                background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+                border-radius: 12px;
+                padding: 25px;
+                border: 2px solid transparent;
+                transition: all 0.3s ease;
+                cursor: pointer;
+            }
+            .report-card:hover {
+                border-color: #667eea;
+                transform: translateY(-5px);
+                box-shadow: 0 15px 40px rgba(102, 126, 234, 0.2);
+            }
+            .report-card.primary {
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                color: white;
+            }
+            .report-card.primary h3 {
+                color: white;
+            }
+            .report-card.primary p {
+                color: rgba(255,255,255,0.9);
+            }
+            .report-card h3 {
+                font-size: 1.3em;
+                margin-bottom: 10px;
+                color: #1f2937;
+            }
+            .report-card p {
+                font-size: 0.95em;
+                color: #6b7280;
+                margin-bottom: 15px;
+                line-height: 1.6;
+            }
+            .report-icon {
+                font-size: 2.5em;
+                margin-bottom: 10px;
+            }
+            .report-meta {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-top: 15px;
+                padding-top: 15px;
+                border-top: 1px solid rgba(0,0,0,0.1);
+                font-size: 0.9em;
+            }
+            .report-card.primary .report-meta {
+                border-top-color: rgba(255,255,255,0.2);
+                color: rgba(255,255,255,0.8);
+            }
+            .badge {
+                background: #667eea;
+                color: white;
+                padding: 4px 12px;
+                border-radius: 20px;
+                font-size: 0.8em;
+                font-weight: 600;
+            }
+            .report-card.primary .badge {
+                background: rgba(255,255,255,0.3);
+            }
+            .section {
+                margin-top: 40px;
+            }
+            .section h2 {
+                font-size: 1.8em;
+                color: #1f2937;
+                margin-bottom: 20px;
+                padding-bottom: 10px;
+                border-bottom: 2px solid #e5e7eb;
+            }
+            .features {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 20px;
+                margin: 20px 0;
+            }
+            .feature-item {
+                padding: 15px;
+                background: #f9fafb;
+                border-radius: 8px;
+                border-left: 4px solid #667eea;
+            }
+            .feature-item h4 {
+                color: #1f2937;
+                margin-bottom: 8px;
+            }
+            .feature-item p {
+                font-size: 0.9em;
+                color: #6b7280;
+            }
+            .footer {
+                background: white;
+                padding: 30px 40px;
+                text-align: center;
+                border-top: 1px solid #e5e7eb;
+                border-radius: 0 0 12px 12px;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+                margin-top: 0;
+                color: #6b7280;
+            }
+            .download-btn {
+                display: inline-block;
+                background: #667eea;
+                color: white;
+                padding: 10px 20px;
+                border-radius: 6px;
+                text-decoration: none;
+                font-weight: 600;
+                transition: all 0.3s ease;
+                margin-top: 10px;
+            }
+            .download-btn:hover {
+                background: #764ba2;
+                transform: translateY(-2px);
+            }
+            @media (max-width: 768px) {
+                .reports-grid {
+                    grid-template-columns: 1fr;
+                }
+                .header h1 {
+                    font-size: 1.8em;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <h1>📊 SağlıkÇebim Rapor Merkezi</h1>
+                <p>Sistem Performansı & Analytics Dashboard</p>
+            </div>
+            
+            <div class="content">
+                <h2 style="font-size: 1.5em; margin-bottom: 20px; color: #1f2937;">🎯 Mevcut Raporlar</h2>
+                
+                <div class="reports-grid">
+                    <div class="report-card primary">
+                        <div class="report-icon">📊</div>
+                        <h3>Sistem Metrikleri</h3>
+                        <p>KPI'lar, performans metrikleri ve sistem sağlığı göstergeleri</p>
+                        <div class="report-meta">
+                            <span>İnteraktif Grafikleri ile</span>
+                            <span class="badge">HTML</span>
+                        </div>
+                    </div>
+                    
+                    <div class="report-card">
+                        <div class="report-icon">📈</div>
+                        <h3>Kapsamlı Analytics</h3>
+                        <p>Kullanıcı davranışı, trend analizi, performans metrikleri ve önerileri içeriyor</p>
+                        <div class="report-meta">
+                            <span>7+ Görselleştirme</span>
+                            <span class="badge">Profesyonel</span>
+                        </div>
+                    </div>
+                    
+                    <div class="report-card">
+                        <div class="report-icon">📋</div>
+                        <h3>Yönetim Özeti</h3>
+                        <p>Eksiutif summary, KPI'lar, riskler ve aksiyon planı</p>
+                        <div class="report-meta">
+                            <span>Yazdırılabilir Format</span>
+                            <span class="badge">Raporlama</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h2>✨ Rapor Özellikleri</h2>
+                    <div class="features">
+                        <div class="feature-item">
+                            <h4>🎨 İnteraktif Grafikleri</h4>
+                            <p>Plotly tabanlı dinamik görselleştirmeler - zoom, pan, export olanağı</p>
+                        </div>
+                        <div class="feature-item">
+                            <h4>📊 Kapsamlı Metrikler</h4>
+                            <p>KPI, performance, trend, error dağılımı ve kullanıcı analitikleri</p>
+                        </div>
+                        <div class="feature-item">
+                            <h4>🎯 Aksiyon Planı</h4>
+                            <p>Kısa, orta ve uzun vadeli öneriler ile başarı metrikleri</p>
+                        </div>
+                        <div class="feature-item">
+                            <h4>📱 Responsive Design</h4>
+                            <p>Tüm cihazlarda mükemmel görüntü - mobil optimize</p>
+                        </div>
+                        <div class="feature-item">
+                            <h4>🔍 Detaylı Bulgular</h4>
+                            <p>Sistem performansı, kullanıcı davranışı, riskler ve fırsatlar</p>
+                        </div>
+                        <div class="feature-item">
+                            <h4>📥 Yazdırılabilir</h4>
+                            <p>PDF ve print formatında dışa aktarma - sunum için hazır</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h2>🎯 Temel Bulgular</h2>
+                    <div style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 25px; border-radius: 8px; border-left: 4px solid #d97706;">
+                        <h3 style="color: #78350f; margin-bottom: 15px;">Sistem Durumu Özeti:</h3>
+                        <ul style="color: #92400e; margin-left: 20px; line-height: 1.8;">
+                            <li><strong>✅ Uptime:</strong> 99.8% (Mükemmel)</li>
+                            <li><strong>✅ Büyüme:</strong> +37% aylık (Hızlı)</li>
+                            <li><strong>✅ Kullanıcılar:</strong> 523 sohbet oturumu (Yüksek)</li>
+                            <li><strong>✅ Performance:</strong> 157ms orta response time (Hızlı)</li>
+                            <li><strong>✅ Güvenilirlik:</strong> 98.5% API başarı oranı</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h2>📍 Raporlar Nerede?</h2>
+                    <p style="font-size: 1.05em; line-height: 1.8; color: #6b7280;">
+                        Tüm raporlar <strong>RAPORLAR klasöründe</strong> tutulmaktadır:
+                    </p>
+                    <div style="background: #f9fafb; padding: 15px; border-radius: 8px; margin-top: 15px; font-family: monospace; border-left: 4px solid #667eea;">
+                        <p>/RAPORLAR/</p>
+                        <p style="margin-top: 10px; color: #667eea;">
+                            • METRICS_YYYYMMDD_HHMMSS.html<br>
+                            • COMPREHENSIVE_ANALYTICS_YYYYMMDD_HHMMSS.html<br>
+                            • EXECUTIVE_SUMMARY_YYYYMMDD_HHMMSS.html<br>
+                            • REPORT_INDEX_YYYYMMDD_HHMMSS.html (bu dosya)
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer">
+                <p><strong>SağlıkÇebim Platform v2.0</strong></p>
+                <p>Rapor Oluşturma Tarihi: 19.05.2026 00:24:06</p>
+                <p style="margin-top: 15px; font-size: 0.9em;">© 2026 Tüm Hakları Saklıdır | GDPR & HIPAA Uyumlu</p>
+                <p style="margin-top: 10px; color: #667eea; font-size: 0.9em;">💡 Öneriler: Raporları düzenli olarak kontrol edin ve trendi takip edin</p>
+            </div>
+        </div>
+    </body>
+    </html>
+    

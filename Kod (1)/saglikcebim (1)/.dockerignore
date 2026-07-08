@@ -1,0 +1,104 @@
+# Node modules
+node_modules
+npm-debug.log
+yarn-error.log
+.npm
+.yarn
+
+# Python cache
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+*.egg-info
+.Python
+.pytype
+.mypy_cache
+.dmypy.json
+dmypy.json
+site-packages
+dist
+build
+*.egg
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Pytest
+.pytest_cache
+pytest-cache-files-*
+.coverage
+htmlcov
+.tox
+.hypothesis
+
+# ML models (MUST CLEAN - Too large)
+backend/models/*
+!backend/models/.gitkeep
+
+# Data (MUST CLEAN - Too large)
+backend/data/*
+!backend/data/.gitkeep
+
+# Virtual environments
+venv
+env
+.env
+ENV
+envs
+backend/venv
+
+# Logs
+logs
+*.log
+*.log.*
+
+# Git
+.git
+.gitignore
+.gitattributes
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+*~
+.sublime-*
+*.sublime-project
+*.sublime-workspace
+
+# OS
+.DS_Store
+Thumbs.db
+.AppleDouble
+.LSOverride
+
+# Environment
+.env.local
+.env.*.local
+.env.prod
+
+# Assets
+backend/uploads/*
+!backend/uploads/.gitkeep
+frontend/dist/*
+frontend/dev-dist/*
+frontend/.vite/
+
+# Temporary
+*.tmp
+.temp
+temp
+*.bak
+*.backup
+*~
+.cache
+
+# Test outputs
+test_*.db
+dev.db
+
+# Package temp files
+*.tar.gz
+*.zip
+*.rar

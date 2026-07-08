@@ -1,0 +1,151 @@
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                     KOMUT REFERANS KARTI - YAZDIRIP AS!                      ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ GİT KOMUTLARI                                                                │
+├──────────────────────────────────────────────────────────────────────────────┤
+│ git status                    # Değişiklikleri gör                           │
+│ git add .                     # Tüm değişiklikleri ekle                      │
+│ git commit -m "mesaj"         # Commit at                                    │
+│ git push origin main          # GitHub'a gönder                              │
+│ git log --oneline             # Commit geçmişi                               │
+│ git diff                      # Değişiklikleri detaylı gör                   │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ BACKEND KOMUTLARI (FastAPI)                                                 │
+├──────────────────────────────────────────────────────────────────────────────┤
+│ cd backend                    # Backend klasörüne git                        │
+│ source venv/bin/activate      # Virtual env aktif (Mac/Linux)               │
+│ venv\Scripts\activate         # Virtual env aktif (Windows)                 │
+│ pip install -r requirements.txt  # Paketleri kur                            │
+│ uvicorn app.main:app --reload # Sunucuyu başlat (http://localhost:8000)     │
+│ alembic revision --autogenerate -m "msg"  # Migration oluştur               │
+│ alembic upgrade head          # Migration uygula                             │
+│ pytest                        # Testleri çalıştır                            │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ FRONTEND KOMUTLARI (React)                                                   │
+├──────────────────────────────────────────────────────────────────────────────┤
+│ cd frontend                   # Frontend klasörüne git                       │
+│ npm install                   # Paketleri kur                                │
+│ npm run dev                   # Dev server başlat (http://localhost:5173)   │
+│ npm run build                 # Production build                             │
+│ npm run preview               # Production preview                           │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ DOCKER KOMUTLARI                                                             │
+├──────────────────────────────────────────────────────────────────────────────┤
+│ docker --version              # Docker versiyonu                             │
+│ docker-compose up -d          # Container'ları başlat (background)          │
+│ docker-compose down           # Container'ları durdur                        │
+│ docker-compose logs           # Logları gör                                  │
+│ docker ps                     # Çalışan container'lar                        │
+│ docker exec -it saglikcebim_db_1 psql -U user -d saglikcebim  # DB'ye gir  │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ DATABASE KOMUTLARI (PostgreSQL)                                              │
+├──────────────────────────────────────────────────────────────────────────────┤
+│ \l                            # Database listesi (psql içinde)               │
+│ \dt                           # Tablo listesi (psql içinde)                  │
+│ \d users                      # Users tablosu yapısı                         │
+│ SELECT * FROM users;          # Tüm kullanıcılar                             │
+│ \q                            # psql'den çık                                 │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ SIKÇA KULLANILAN PAKETLER                                                    │
+├──────────────────────────────────────────────────────────────────────────────┤
+│ BACKEND:                                                                     │
+│   pip install fastapi uvicorn sqlalchemy pydantic python-jose bcrypt        │
+│   pip install pdfplumber python-multipart alembic                           │
+│                                                                              │
+│ FRONTEND:                                                                    │
+│   npm install axios react-router-dom recharts zustand                       │
+│   npm install -D tailwindcss postcss autoprefixer                           │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ TEST KOMUTLARI                                                               │
+├──────────────────────────────────────────────────────────────────────────────┤
+│ curl http://localhost:8000/health         # Backend health check            │
+│ curl -X POST http://localhost:8000/auth/register \                          │
+│   -H "Content-Type: application/json" \                                     │
+│   -d '{"email":"test@test.com","password":"test123"}'                       │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ SIKÇA YAPILAN HATALAR & ÇÖZÜMLER                                            │
+├──────────────────────────────────────────────────────────────────────────────┤
+│ HATA: "ModuleNotFoundError: No module named 'fastapi'"                      │
+│ ÇÖZÜM: venv aktif mi? → pip install -r requirements.txt                     │
+│                                                                              │
+│ HATA: "Port 8000 is already in use"                                         │
+│ ÇÖZÜM: Eski process'i öldür → kill $(lsof -t -i:8000)                      │
+│                                                                              │
+│ HATA: "Cannot find module 'react'"                                          │
+│ ÇÖZÜM: npm install eksik → cd frontend && npm install                       │
+│                                                                              │
+│ HATA: "Connection refused" (PostgreSQL)                                     │
+│ ÇÖZÜM: Docker container çalışıyor mu? → docker-compose up -d                │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ GÜNLÜK RUTİN KOMUTLARI                                                       │
+├──────────────────────────────────────────────────────────────────────────────┤
+│ SABAH (Çalışmaya başlarken):                                                │
+│   1. docker-compose up -d                                                    │
+│   2. cd backend && source venv/bin/activate && uvicorn app.main:app --reload│
+│   3. Yeni terminal: cd frontend && npm run dev                              │
+│                                                                              │
+│ AKŞAM (Bitirirken):                                                          │
+│   1. git add .                                                               │
+│   2. git commit -m "feat: bugünkü özellik"                                  │
+│   3. git push origin main                                                    │
+│   4. docker-compose down                                                     │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ HIZLI KONTROLLER                                                             │
+├──────────────────────────────────────────────────────────────────────────────┤
+│ Backend çalışıyor mu?      → http://localhost:8000/docs                     │
+│ Frontend çalışıyor mu?     → http://localhost:5173                          │
+│ Database çalışıyor mu?     → docker ps | grep postgres                      │
+│ Git durumu?                → git status                                      │
+│ Son 5 commit?              → git log --oneline -5                           │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ VS CODE KISAYOLLARI                                                          │
+├──────────────────────────────────────────────────────────────────────────────┤
+│ Ctrl/Cmd + P               # Dosya ara                                       │
+│ Ctrl/Cmd + Shift + P       # Komut paleti                                    │
+│ Ctrl/Cmd + `               # Terminal aç/kapat                               │
+│ Ctrl/Cmd + B               # Sidebar aç/kapat                                │
+│ Ctrl/Cmd + /               # Comment toggle                                  │
+│ Alt/Opt + Up/Down          # Satırı taşı                                     │
+│ Ctrl/Cmd + D               # Aynı kelimeyi seç (multi-cursor)               │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ ACİL DURUM KOMUTLARI                                                         │
+├──────────────────────────────────────────────────────────────────────────────┤
+│ HER ŞEYİ DURDUR:                                                             │
+│   docker-compose down                                                        │
+│   pkill -f uvicorn                                                           │
+│   pkill -f "npm run dev"                                                     │
+│                                                                              │
+│ CLEAN RESTART:                                                               │
+│   git stash                  # Değişiklikleri sakla                          │
+│   git clean -fd              # Tüm yeni dosyaları sil                        │
+│   docker-compose down -v     # Volume'leri de sil                           │
+│   docker-compose up -d       # Temiz başlangıç                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+╔══════════════════════════════════════════════════════════════════════════════╗
+║ BU KARTI YAZDIRIP MASANA AS! HER GÜN KULLANACAKSIN!                         ║
+╚══════════════════════════════════════════════════════════════════════════════╝

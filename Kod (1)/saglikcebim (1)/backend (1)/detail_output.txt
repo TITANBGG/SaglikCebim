@@ -1,0 +1,399 @@
+﻿
+======================================================================
+PDF: 2018 EN.pdf  (22 results)
+======================================================================
+  BASO                                       0.0  10^3            ref=
+  BASO%                                      0.4  %               ref=
+  EOS                                        0.3  10^3            ref=
+  EOS%                                       5.0  %               ref=
+  HCT                                       45.9  %               ref=
+  HGB                                       15.4  g/dL            ref=
+  LYM                                        1.6  10^3            ref=
+  LYM%                                      30.5  %               ref=
+  MCH                                       30.0  pg              ref=
+  MCHC                                      33.6  g/dl            ref=
+  MCV                                       89.3  fl              ref=
+  MONO                                       0.4  10^3            ref=
+  MONO%                                      7.8  %               ref=
+  MPV                                       10.9  %               ref=
+  NEU                                        2.9  10^3            ref=
+  NEU%                                      56.3  %               ref=
+  PCT                                        0.3  %               ref=
+  PDW                                       13.2  %               ref=
+  PLT                                      286.0  10^3            ref=
+  RBC                                        5.1  10^6            ref=
+  RDW                                       13.0  %               ref=
+  WBC                                        5.2  10^3            ref=
+
+======================================================================
+PDF: 2018 TR.pdf  (22 results)
+======================================================================
+  BASO                                       0.0  10^3            ref=
+  BASO%                                      0.4  %               ref=
+  EOS                                        0.3  10^3            ref=
+  EOS%                                       5.0  %               ref=
+  HCT                                       45.9  %               ref=
+  HGB                                       15.4  g/dL            ref=
+  LYM                                        1.6  10^3            ref=
+  LYM%                                      30.5  %               ref=
+  MCH                                       30.0  pg              ref=
+  MCHC                                      33.6  g/dl            ref=
+  MCV                                       89.3  fl              ref=
+  MONO                                       0.4  10^3            ref=
+  MONO%                                      7.8  %               ref=
+  MPV                                       10.9  %               ref=
+  NEU                                        2.9  10^3            ref=
+  NEU%                                      56.3  %               ref=
+  PCT                                        0.3  %               ref=
+  PDW                                       13.2  %               ref=
+  PLT                                      286.0  10^3            ref=
+  RBC                                        5.1  10^6            ref=
+  RDW                                       13.0  %               ref=
+  WBC                                        5.2  10^3            ref=
+
+======================================================================
+PDF: 2024 1 eylul EN.pdf  (38 results)
+======================================================================
+  BASO#                                     0.03  10*3/ÁL         ref=
+  BASO%                                      0.4  %               ref=
+  EO#                                        0.2  10*3/ÁL         ref=
+  EO%                                        2.8  %               ref=
+  HCT                                       47.4  %               ref=
+  HGB                                       15.4  g/dL            ref=
+  IG#                                       0.02  10*3/ÁL         ref=
+  IG%                                        0.3  %               ref=
+  LYMPH#                                    1.26  10*3/ÁL         ref=
+  LYMPH%                                    17.4  %               ref=
+  MCH                                       30.9  pg              ref=
+  MCHC                                      32.5  g/dL            ref=
+  MCV                                       95.0  fL              ref=
+  MONO#                                     0.75  10*3/ÁL         ref=
+  MONO%                                     10.3  %               ref=
+  MPV                                       10.3  fL              ref=
+  NEUT#                                     5.01  10*3/ÁL         ref=
+  NEUT%                                     69.1  %               ref=
+  NRBC#                                      0.0  10*3/ÁL         ref=
+  NRBC%                                      0.0  /100WBC         ref=
+  PDW                                       12.8  fL              ref=
+  PLT                                      336.0  10*3/ÁL         ref=
+  RBC                                       4.99  10*6/ÁL         ref=
+  RDW-CV                                    12.9  %               ref=
+  RDW-SD                                    44.7  fL              ref=
+  WBC                                       7.25  10*3/ÁL         ref=
+  %Hb A1C                                    5.0  %               ref=
+  ALT                                       26.9  U/L             ref=
+  AST                                       18.6  U/L             ref=
+  Demir                                     54.0  Ág/dL           ref=
+  Glukoz                                   100.0  mg/dL           ref=
+  TSH                                       2.01  ÁIU/mL          ref=
+  ▄re                                       21.0  mg/dL           ref=
+  Vitamin B12                              271.0  pg/mL           ref=
+  Dansite                                   1.01  8               ref=
+  Dansite                                  1.018  pH              ref=
+  Total Kolesterol                         212.0  mg/dL           ref=
+  Trigliserid                              314.9  mg/dL           ref=
+
+======================================================================
+PDF: 2024 1 eylul TR.pdf  (30 results)
+======================================================================
+  ALT                                       34.0  U/L             ref=
+  AST                                       25.0  U/L             ref=
+  CRP (T³rbidimetrik)                        4.3  mg/L            ref=
+  Kreatinin                                  0.8  mg/dl           ref=
+  Potasyum                                  4.49  mmol/L          ref=
+  Sodyum                                   140.0  mmol/L          ref=
+  ▄re                                      29.11  mg/dL           ref=
+  BAS#                                       0.0  10^9/L          ref=
+  BAS%                                       0.3  %               ref=
+  EOS#                                       0.3  10^9/L          ref=
+  EOS%                                       5.9  %               ref=
+  HCT                                       41.6  %               ref=
+  HGB                                       14.4  g/dL            ref=
+  LYM#                                       1.6  10^9/L          ref=
+  LYM%                                      29.5  %               ref=
+  MCH                                       30.7  pg              ref=
+  MCHC                                      34.6  g/dL            ref=
+  MCV                                       88.9  fL              ref=
+  MON#                                       0.7  10^9/L          ref=
+  MON%                                      13.8  %               ref=
+  MPV                                        8.1  fL              ref=
+  NEU#                                       2.7  10^9/L          ref=
+  NEU%                                      50.5  %               ref=
+  PLT                                      278.0  10^9/L          ref=
+  RBC                                       4.68  10^12/L         ref=
+  RDW-CV                                    13.1  %               ref=
+  RDW-SD                                    42.0  fL              ref=
+  WBC                                        5.4  10^9/L          ref=
+  NRBC                                      0.01  10^3/uL         ref=
+  NRBC%                                      0.2  /100WBC         ref=
+
+======================================================================
+PDF: 2024 1 kas²m EN.pdf  (24 results)
+======================================================================
+  CRP (T³rbidimetrik)                        7.9  mg/L            ref=
+  BAS#                                       0.0  10^9/L          ref=
+  BAS%                                       0.2  %               ref=
+  EOS#                                       0.1  10^9/L          ref=
+  EOS%                                       1.4  %               ref=
+  HCT                                       46.8  %               ref=
+  HGB                                       15.8  g/dL            ref=
+  LYM#                                       2.6  10^9/L          ref=
+  LYM%                                      34.4  %               ref=
+  MCH                                       30.2  pg              ref=
+  MCHC                                      33.7  g/dL            ref=
+  MCV                                       89.8  fL              ref=
+  MON#                                       1.1  10^9/L          ref=
+  MON%                                      15.0  %               ref=
+  MPV                                        8.5  fL              ref=
+  NEU#                                       3.8  10^9/L          ref=
+  NEU%                                      49.0  %               ref=
+  PLT                                      331.0  10^9/L          ref=
+  RBC                                       5.21  10^12/L         ref=
+  RDW-CV                                    13.0  %               ref=
+  RDW-SD                                    41.6  fL              ref=
+  WBC                                        7.7  10^9/L          ref=
+  NRBC                                      0.08  10^3/uL         ref=
+  NRBC%                                      1.1  /100WBC         ref=
+
+======================================================================
+PDF: 2024 1 kas²m TR.pdf  (24 results)
+======================================================================
+  CRP (T³rbidimetrik)                        7.9  mg/L            ref=
+  BAS#                                       0.0  10^9/L          ref=
+  BAS%                                       0.2  %               ref=
+  EOS#                                       0.1  10^9/L          ref=
+  EOS%                                       1.4  %               ref=
+  HCT                                       46.8  %               ref=
+  HGB                                       15.8  g/dL            ref=
+  LYM#                                       2.6  10^9/L          ref=
+  LYM%                                      34.4  %               ref=
+  MCH                                       30.2  pg              ref=
+  MCHC                                      33.7  g/dL            ref=
+  MCV                                       89.8  fL              ref=
+  MON#                                       1.1  10^9/L          ref=
+  MON%                                      15.0  %               ref=
+  MPV                                        8.5  fL              ref=
+  NEU#                                       3.8  10^9/L          ref=
+  NEU%                                      49.0  %               ref=
+  PLT                                      331.0  10^9/L          ref=
+  RBC                                       5.21  10^12/L         ref=
+  RDW-CV                                    13.0  %               ref=
+  RDW-SD                                    41.6  fL              ref=
+  WBC                                        7.7  10^9/L          ref=
+  NRBC                                      0.08  10^3/uL         ref=
+  NRBC%                                      1.1  /100WBC         ref=
+
+======================================================================
+PDF: 2024 ali nebi er EN.pdf  (38 results)
+======================================================================
+  BASO#                                     0.03  10*3/ÁL         ref=
+  BASO%                                      0.4  %               ref=
+  EO#                                        0.2  10*3/ÁL         ref=
+  EO%                                        2.8  %               ref=
+  HCT                                       47.4  %               ref=
+  HGB                                       15.4  g/dL            ref=
+  IG#                                       0.02  10*3/ÁL         ref=
+  IG%                                        0.3  %               ref=
+  LYMPH#                                    1.26  10*3/ÁL         ref=
+  LYMPH%                                    17.4  %               ref=
+  MCH                                       30.9  pg              ref=
+  MCHC                                      32.5  g/dL            ref=
+  MCV                                       95.0  fL              ref=
+  MONO#                                     0.75  10*3/ÁL         ref=
+  MONO%                                     10.3  %               ref=
+  MPV                                       10.3  fL              ref=
+  NEUT#                                     5.01  10*3/ÁL         ref=
+  NEUT%                                     69.1  %               ref=
+  NRBC#                                      0.0  10*3/ÁL         ref=
+  NRBC%                                      0.0  /100WBC         ref=
+  PDW                                       12.8  fL              ref=
+  PLT                                      336.0  10*3/ÁL         ref=
+  RBC                                       4.99  10*6/ÁL         ref=
+  RDW-CV                                    12.9  %               ref=
+  RDW-SD                                    44.7  fL              ref=
+  WBC                                       7.25  10*3/ÁL         ref=
+  %Hb A1C                                    5.0  %               ref=
+  ALT                                       26.9  U/L             ref=
+  AST                                       18.6  U/L             ref=
+  Demir                                     54.0  Ág/dL           ref=
+  Glukoz                                   100.0  mg/dL           ref=
+  TSH                                       2.01  ÁIU/mL          ref=
+  ▄re                                       21.0  mg/dL           ref=
+  Vitamin B12                              271.0  pg/mL           ref=
+  Dansite                                   1.01  8               ref=
+  Dansite                                  1.018  pH              ref=
+  Total Kolesterol                         212.0  mg/dL           ref=
+  Trigliserid                              314.9  mg/dL           ref=
+
+======================================================================
+PDF: 2024 ali nebi er TR.pdf  (38 results)
+======================================================================
+  BASO#                                     0.03  10*3/ÁL         ref=
+  BASO%                                      0.4  %               ref=
+  EO#                                        0.2  10*3/ÁL         ref=
+  EO%                                        2.8  %               ref=
+  HCT                                       47.4  %               ref=
+  HGB                                       15.4  g/dL            ref=
+  IG#                                       0.02  10*3/ÁL         ref=
+  IG%                                        0.3  %               ref=
+  LYMPH#                                    1.26  10*3/ÁL         ref=
+  LYMPH%                                    17.4  %               ref=
+  MCH                                       30.9  pg              ref=
+  MCHC                                      32.5  g/dL            ref=
+  MCV                                       95.0  fL              ref=
+  MONO#                                     0.75  10*3/ÁL         ref=
+  MONO%                                     10.3  %               ref=
+  MPV                                       10.3  fL              ref=
+  NEUT#                                     5.01  10*3/ÁL         ref=
+  NEUT%                                     69.1  %               ref=
+  NRBC#                                      0.0  10*3/ÁL         ref=
+  NRBC%                                      0.0  /100WBC         ref=
+  PDW                                       12.8  fL              ref=
+  PLT                                      336.0  10*3/ÁL         ref=
+  RBC                                       4.99  10*6/ÁL         ref=
+  RDW-CV                                    12.9  %               ref=
+  RDW-SD                                    44.7  fL              ref=
+  WBC                                       7.25  10*3/ÁL         ref=
+  %Hb A1C                                    5.0  %               ref=
+  ALT                                       26.9  U/L             ref=
+  AST                                       18.6  U/L             ref=
+  Demir                                     54.0  Ág/dL           ref=
+  Glukoz                                   100.0  mg/dL           ref=
+  TSH                                       2.01  ÁIU/mL          ref=
+  ▄re                                       21.0  mg/dL           ref=
+  Vitamin B12                              271.0  pg/mL           ref=
+  Dansite                                   1.01  8               ref=
+  Dansite                                  1.018  pH              ref=
+  Total Kolesterol                         212.0  mg/dL           ref=
+  Trigliserid                              314.9  mg/dL           ref=
+
+======================================================================
+PDF: 2025 ali nebi er EN.pdf  (33 results)
+======================================================================
+  BASO#                                     0.05  10*3/ÁL         ref=
+  BASO%                                      0.8  %               ref=
+  EO#                                       0.23  10*3/ÁL         ref=
+  EO%                                        3.7  %               ref=
+  HCT                                       43.6  %               ref=
+  HGB                                       14.8  g/dL            ref=
+  IG#                                       0.01  10*3/ÁL         ref=
+  IG%                                        0.2  %               ref=
+  LYMPH#                                    1.74  10*3/ÁL         ref=
+  LYMPH%                                    28.2  %               ref=
+  MCH                                       31.2  pg              ref=
+  MCHC                                      33.9  g/dL            ref=
+  MCV                                       91.8  fL              ref=
+  MONO#                                     0.47  10*3/ÁL         ref=
+  MONO%                                      7.6  %               ref=
+  MPV                                       10.3  fL              ref=
+  NEUT#                                     3.69  10*3/ÁL         ref=
+  NEUT%                                     59.7  %               ref=
+  NRBC#                                      0.0  10*3/ÁL         ref=
+  NRBC%                                      0.0  /100WBC         ref=
+  PDW                                       12.7  fL              ref=
+  PLT                                      331.0  10*3/ÁL         ref=
+  RBC                                       4.75  10*6/ÁL         ref=
+  RDW-CV                                    12.9  %               ref=
+  RDW-SD                                    43.0  fL              ref=
+  WBC                                       6.18  10*3/ÁL         ref=
+  %Hb A1C                                    4.9  %               ref=
+  Demir                                    114.0  Ág/dL           ref=
+  Glukoz                                    87.0  mg/dL           ref=
+  Vitamin B12                              475.0  pg/mL           ref=
+  VLDL Kolesterol                           41.6  mg/dL           ref=
+  Total Kolesterol                         200.6  mg/dL           ref=
+  Trigliserid                              208.2  mg/dL           ref=
+
+======================================================================
+PDF: 2025 ali nebi er.pdf  (33 results)
+======================================================================
+  BASO#                                     0.05  10*3/ÁL         ref=
+  BASO%                                      0.8  %               ref=
+  EO#                                       0.23  10*3/ÁL         ref=
+  EO%                                        3.7  %               ref=
+  HCT                                       43.6  %               ref=
+  HGB                                       14.8  g/dL            ref=
+  IG#                                       0.01  10*3/ÁL         ref=
+  IG%                                        0.2  %               ref=
+  LYMPH#                                    1.74  10*3/ÁL         ref=
+  LYMPH%                                    28.2  %               ref=
+  MCH                                       31.2  pg              ref=
+  MCHC                                      33.9  g/dL            ref=
+  MCV                                       91.8  fL              ref=
+  MONO#                                     0.47  10*3/ÁL         ref=
+  MONO%                                      7.6  %               ref=
+  MPV                                       10.3  fL              ref=
+  NEUT#                                     3.69  10*3/ÁL         ref=
+  NEUT%                                     59.7  %               ref=
+  NRBC#                                      0.0  10*3/ÁL         ref=
+  NRBC%                                      0.0  /100WBC         ref=
+  PDW                                       12.7  fL              ref=
+  PLT                                      331.0  10*3/ÁL         ref=
+  RBC                                       4.75  10*6/ÁL         ref=
+  RDW-CV                                    12.9  %               ref=
+  RDW-SD                                    43.0  fL              ref=
+  WBC                                       6.18  10*3/ÁL         ref=
+  %Hb A1C                                    4.9  %               ref=
+  Demir                                    114.0  Ág/dL           ref=
+  Glukoz                                    87.0  mg/dL           ref=
+  Vitamin B12                              475.0  pg/mL           ref=
+  VLDL Kolesterol                           41.6  mg/dL           ref=
+  Total Kolesterol                         200.6  mg/dL           ref=
+  Trigliserid                              208.2  mg/dL           ref=
+
+======================================================================
+PDF: ugur17.07.2025 (1).pdf  (53 results)
+======================================================================
+  -Bazofil                                  0.02  10^3/uL         ref=
+  -Bazofil %                                 0.3  %               ref=
+  -Eozinofil                                0.12  10^3/uL         ref=
+  -Eozinofil %                               2.0  %               ref=
+  HCT                                       42.4  %               ref=
+  HGB                                       15.6  g/dL            ref=
+  -Lenfosit                                 2.21  10^3/uL         ref=
+  -Lenfosit %                               37.2  %               ref=
+  MCH                                       30.1  pg              ref=
+  MCHC                                      36.8  %               ref=
+  MCV                                       81.9  fL              ref=
+  -Monosit                                  0.53  10^3/uL         ref=
+  -Monosit %                                 8.9  %               ref=
+  MPV                                        8.8  fL              ref=
+  -N÷trofil                                 3.06  10^3/uL         ref=
+  -N÷trofil %                               51.6  %               ref=
+  PCT                                       0.25  %               ref=
+  PDW                                        8.9  %               ref=
+  PLT                                      282.0  10^3/uL         ref=
+  RBC                                       5.18  10^6/Ál         ref=
+  RDW                                       12.3  %               ref=
+  WBC                                       5.94  10^3/uL         ref=
+  Alb³min                                   4.87  g/L             ref=
+  ALP                                       98.0  U/L             ref=
+  ALT                                       30.0  U/L             ref=
+  Amilaz                                    45.0  U/L             ref=
+  AST                                       23.0  U/L             ref=
+  Demir                                    130.6  ug/L            ref=
+  Demir Ba­lama Kapasitesi (Serbest)       171.0  ug/dL           ref=
+  Direkt Bilirubin                          0.61  mg/dL           ref=
+  GGT                                       26.0  U/L             ref=
+  Glukoz                                    75.0  mg/dL           ref=
+  HDL Kolesterol                            40.0  mg/dL           ref=
+  Kalsiyum                                   9.6  mg/dL           ref=
+  Klor                                     108.0  mmol/L          ref=
+  Kolesterol                               121.0  mg/dL           ref=
+  LDH                                      169.0  U/L             ref=
+  LDL Kolesterol (Hesaplanan)               66.0  mg/dL           ref=
+  Magnezyum                                 1.83  mg/dL           ref=
+  Potasyum                                   3.7  mmol/L          ref=
+  Sodyum                                   139.0  mmol/L          ref=
+  Total Bilirubin                           1.95  mg/dL           ref=
+  Total Protein                              7.4  g/L             ref=
+  Trigliserid                               75.0  mg/dL           ref=
+  ▄re                                       27.0  mg/dL           ref=
+  ▄rik Asit                                  5.8  mg/dL           ref=
+  Kreatinin                                 0.86  mg/dL           ref=
+  Fosfor                                     2.7  mg/dL           ref=
+  ANT¦- HBS                                28.32  IU/mL           ref=
+  ANT¦-HCV                                 0.061  COI             ref=
+  HBSAG                                    0.444  COI             ref=
+  Glomer³ler Filtrasyon H²z² (CKD-EPI)      118.2  mg/dL           ref=
+  ANT¦-HIV                                 0.266  COI             ref=
