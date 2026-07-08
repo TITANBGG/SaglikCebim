@@ -1,8 +1,0 @@
-{
-  "recommendations": [
-    "ms-python.python",
-    "github.copilot",
-    "esbenp.prettier-vscode",
-    "dbaeumer.vscode-eslint"
-  ]
-}

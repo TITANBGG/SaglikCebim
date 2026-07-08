@@ -23,7 +23,7 @@ services:
 
   backend:
     build:
-      context: ./backend (1)
+      context: ./backend
       dockerfile: Dockerfile
     container_name: saglikcebim_backend
     env_file:

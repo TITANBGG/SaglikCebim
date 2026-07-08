@@ -21,6 +21,11 @@ settings.local.json
 .claude/
 last_token.txt
 
+# Databases
+*.db
+*.sqlite3
+dev.db*
+
 # OS
 .DS_Store
 Thumbs.db

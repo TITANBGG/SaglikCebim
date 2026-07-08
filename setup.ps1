@@ -65,11 +65,13 @@ function Ensure-ComposeEnv {
         return
     }
 
+    $randomSecret = [Convert]::ToBase64String((1..32 | ForEach-Object { Get-Random -Maximum 256 }))
+    $randomPass = [Guid]::NewGuid().ToString("N")
     @"
 POSTGRES_DB=saglikcebim
 POSTGRES_USER=saglikcebim_user
-POSTGRES_PASSWORD=saglikcebim_pass
-SECRET_KEY=saglikcebim-secret-key-prod
+POSTGRES_PASSWORD=$randomPass
+SECRET_KEY=$randomSecret
 "@ | Out-File -Encoding ascii ".env"
 }
 

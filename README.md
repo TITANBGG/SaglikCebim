@@ -1,6 +1,8 @@
 # SağlıkCebim
 
-Bu depo SağlıkCebim projesinin ana kaynak deposudur — backend API, frontend SPA, model/inference boru hattı ve deploy girdileri.
+> **⚠️ Medical Disclaimer:** This project is a prototype developed for academic/demonstration purposes only. It is **not** intended to replace professional medical advice, diagnosis, or treatment. Always seek the advice of a qualified healthcare provider with any questions you may have regarding a medical condition.
+
+SağlıkCebim is a comprehensive, Turkish-language multimodal clinical decision support system designed to assist healthcare professionals. It integrates advanced machine learning models with a full-stack web application to analyze medical data, radiology images, and provide evidence-based clinical roadmaps.
 
 ## Amaç
 Klinik öykü toplama, radyoloji görüntü analizi ve raporlama otomasyonunu sağlayan bir prototip uygulama.
