@@ -1,3 +1,7 @@
+
+https://youtu.be/Gd3x-HQGDXs
+
+
 <div align="center">
   <img src="frontend/public/logo.svg" alt="SağlıkCebim Logo" width="110"/>
 
@@ -279,6 +283,36 @@ Interactive documentation is generated automatically:
 | Evidence | `/api/v1/evidence` | Literature retrieval |
 | Roadmap | `/api/v1/roadmap` | Clinical roadmap sessions |
 | Notifications | `/api/v1/notifications` | Web Push notifications |
+<img width="538" height="1021" alt="Ekran görüntüsü 2026-05-19 001645" src="https://github.com/user-attachments/assets/8454457a-4670-4e15-8b83-11bcf741ff71" />
+<img width="1912" height="1012" alt="Ekran görüntüsü 2026-05-19 000948" src="https://github.com/user-attachments/assets/b6d82bf7-a2a4-4e0e-84fa-42d86405585d" />
+<img width="1912" height="1012" alt="Ekran görüntüsü 2026-05-19 000948 (2)" src="https://github.com/user-attachments/assets/a39daf91-9a38-4c0d-832b-4b480d7ce729" />
+<img width="1915" height="1020" alt="Ekran görüntüsü 2026-05-19 000920 (2)" src="https://github.com/user-attachments/assets/be41ee14-0d34-48af-8f83-4512082883a6" />
+<img width="1625" height="731" alt="Ekran görüntüsü 2026-05-19 000700" src="https://github.com/user-attachments/assets/dcba8190-a8dc-4223-9bf0-072089c3c74c" />
+<img width="1675" height="808" alt="Ekran görüntüsü 2026-05-19 000613" src="https://github.com/user-attachments/assets/1880e15c-79ed-4f46-b83a-3bc2d9dbb077" />
+<img width="1918" height="876" alt="Ekran görüntüsü 2026-05-19 000607" src="https://github.com/user-attachments/assets/4aeddb65-074d-4043-9edf-b3c84746848c" />
+<img width="831" height="812" alt="Ekran görüntüsü 2026-05-19 000510" src="https://github.com/user-attachments/assets/3e751edd-d41e-4f8d-a450-0edef5390329" />
+<img width="1918" height="877" alt="Ekran görüntüsü 2026-05-19 000313" src="https://github.com/user-attachments/assets/40083653-1903-4366-9ed4-5ba60ca7196b" />
+<img width="1675" height="573" alt="Ekran görüntüsü 2026-05-19 000306" src="https://github.com/user-attachments/assets/096ccffc-72af-462a-bf5d-83d81bfe16d0" />
+<img width="1693" height="821" alt="Ekran görüntüsü 2026-05-19 000259" src="https://github.com/user-attachments/assets/5a0ec3ea-71b7-4dad-ac4c-89a056b67b1a" />
+<img width="1487" height="855" alt="Ekran görüntüsü 2026-05-18 235223" src="https://github.com/user-attachments/assets/feac3342-12b2-49e7-b1d9-8cb73aa6555d" />
+<img width="937" height="707" alt="Ekran görüntüsü 2026-05-18 234455" src="https://github.com/user-attachments/assets/68205705-b963-4a37-82e8-66ebeb123d72" />
+<img width="968" height="833" alt="Ekran görüntüsü 2026-05-18 234448" src="https://github.com/user-attachments/assets/6416cce2-aaa2-4207-87f9-f6eb0b407271" />
+<img width="955" height="705" alt="Ekran görüntüsü 2026-05-18 234441" src="https://github.com/user-attachments/assets/a2f25fa8-3bf6-495a-a040-75e6f68a7596" />
+<img width="1007" height="707" alt="Ekran görüntüsü 2026-05-18 234434" src="https://github.com/user-attachments/assets/8d9a08b0-3e15-44f6-a9b4-54aa21f409a8" />
+<img width="1653" height="261" alt="Ekran görüntüsü 2026-05-18 234426" src="https://github.com/user-attachments/assets/3f8a05f7-ed42-492c-8762-409dae7fe7ba" />
+<img width="1906" height="855" alt="Ekran görüntüsü 2026-05-18 234406 - Kopya" src="https://github.com/user-attachments/assets/2c4b5bd7-259d-4a3c-b650-f3bf6b9a02ee" />
+<img width="1583" height="842" alt="Ekran görüntüsü 2026-05-04 001542" src="https://github.com/user-attachments/assets/3f44945b-9206-4086-b157-414fc5425b9b" />
+<img width="1583" height="842" alt="Ekran görüntüsü 2026-05-04 001542 - Kopya" src="https://github.com/user-attachments/assets/4cbe951e-d950-491d-9433-3df074f72c8d" />
+<img width="537" height="159" alt="Ekran görüntüsü 2026-05-03 221914 - Kopya" src="https://github.com/user-attachments/assets/44d88d3c-97a8-46b3-aa7b-437d2c56d8bb" />
+<img width="1238" height="868" alt="Ekran görüntüsü 2026-05-02 214543 - Kopya" src="https://github.com/user-attachments/assets/3a1feca5-eb47-4ab4-8728-5b3c1a8e8da8" />
+<img width="545" height="1007" alt="Ekran görüntüsü 2026-05-19 001751" src="https://github.com/user-attachments/assets/ce8ae0bc-7575-4307-af18-5771b0ab9241" />
+<img width="552" height="1018" alt="Ekran görüntüsü 2026-05-19 001720" src="https://github.com/user-attachments/assets/a7fc33d3-1d38-471b-95c6-d60f77397a66" />
+<img width="612" height="607" alt="0 1 - Kopya" src="https://github.com/user-attachments/assets/a94846c7-260b-497b-82d1-cf9491276cc7" />
+<img width="611" height="591" alt="_PubMed Entegrasyon Akışı Diyagram drawio" src="https://github.com/user-attachments/assets/fb556aa2-ba73-4c95-b2b4-cb3030dd5a37" />
+<img width="611" height="465" alt="_PDF Ayrıştırma Akışı drawio" src="https://github.com/user-attachments/assets/80c98897-1095-458a-b645-560c4741fd3c" />
+<img width="581" height="631" alt="Radyoloji Analiz Pipeline Diyagram drawio (1)" src="https://github.com/user-attachments/assets/92e84a2b-1953-4005-a711-0d365c702890" />
+<img width="361" height="521" alt="PDF Ayrıştırma Akışı Diyagram drawio" src="https://github.com/user-attachments/assets/0b14ffa1-b6e6-45f4-9200-76d4964558a3" />
+<img width="641" height="601" alt="Çok Etkenli AI Akışı Diyagram drawio" src="https://github.com/user-attachments/assets/a83522cd-e42b-41f8-9150-f9b968cb1a47" />
 
 </details>
 
