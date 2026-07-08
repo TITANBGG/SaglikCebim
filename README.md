@@ -127,6 +127,24 @@ To ensure maximum repository performance and strictly comply with medical data p
 
 ---
 
+## 📸 Screenshots
+
+Here are the real application interfaces from the SağlıkCebim platform:
+
+### 1. User Login
+![Login Screen](assets/login.png)
+
+### 2. PDF Analysis & Personalization Dashboard
+![PDF Analysis Details](assets/dashboard.png)
+
+### 3. PubMed Integration
+![PubMed Recommendations](assets/pubmed.png)
+
+### 4. ClinicalKey / UpToDate AI Evidence Module
+![ClinicalKey Evidence Engine](assets/clinicalkey.png)
+
+---
+
 ## 📊 Technical Performance & Metrics
 
 The system has been rigorously tested as part of the official graduation thesis. The following metrics demonstrate the enterprise-grade reliability of SağlıkCebim:
