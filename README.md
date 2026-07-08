@@ -39,9 +39,12 @@ Unlike standard single-prompt LLM wrappers, SağlıkCebim utilizes a complex, 4-
 ## ✨ Key Features
 
 - 🤖 **Multi-Agent Clinical Chatbot & FlashClinicalKey**: Powered by a locally hosted **Llama 3** (via Ollama) and an underlying `ClinicalRoadmapEngine`. Features a specialized **ClinicalKey Chatbot** and **FlashClinicalKey** module to retrieve hyper-specific medical definitions directly from UpToDate and ClinicalKey data streams.
+  <br>![Multi-Agent Flow](assets/agent_flow.png)
 - 🩻 **Radiology AI (DenseNet-121)**: Upload chest X-rays to instantly receive probability scores for conditions like Pneumonia or Cardiomegaly, complete with diagnostic confidence scoring and Grad-CAM heatmaps.
 - 📄 **Intelligent PDF Parser & Weighted Analysis**: Parses raw medical lab reports using 9 distinct Regex patterns optimized for Turkish clinics. Applies **confidence weightings (ağırlıklandırmalar)** to differentiate between precise reference range matches and heuristic value extraction, ensuring maximum clinical safety.
+  <br>![PDF Parsing Flow](assets/pdf_flow.png)
 - 🔗 **Academic Evidence Engines (PubMed, ClinicalKey, UpToDate)**: Automatically queries external medical databases (PubMed E-utilities) and integrates with **ClinicalKey / UpToDate** standards to anchor clinical advice in up-to-date scientific literature.
+  <br>![PubMed Evidence Flow](assets/pubmed_flow.png)
 - 📋 **Comprehensive Anamnesis (Klinik Öykü)**: Built-in demographic, chronic disease, medication, and allergy tracking modules. The PersonalAgent dynamically adjusts normal ranges (e.g., gender/age-specific TSH or Ferritin) based on the user's anamnesis profile.
 - 🛡️ **Secure & Compliant Architecture**: Designed with robust JWT authentication, password hashing, and separated dataset environments to respect patient data privacy (KVKK/GDPR).
 
@@ -49,25 +52,7 @@ Unlike standard single-prompt LLM wrappers, SağlıkCebim utilizes a complex, 4-
 
 ## 🏗️ System Architecture
 
-```mermaid
-graph TD
-    User([Healthcare Professional]) -->|HTTPS/WSS| ReactFrontend[React 18 PWA]
-    ReactFrontend -->|REST API| FastAPI[FastAPI Backend]
-    
-    subgraph Backend Infrastructure
-        FastAPI -->|ORM| Postgres[(PostgreSQL 15)]
-        FastAPI -->|Orchestrator| MultiAgent[Multi-Agent Pipeline]
-        FastAPI -->|Computer Vision| DenseNet[CNN: DenseNet-121]
-        FastAPI -->|NLP Engine| ClinicalBERT[HuggingFace: ClinicalBERT]
-    end
-    
-    MultiAgent --> IntentAgent
-    MultiAgent --> PersonalAgent
-    MultiAgent --> KnowledgeAgent
-    MultiAgent --> AnswerAgent
-    
-    FastAPI -->|Evidence Queries| PubMed[PubMed E-utilities]
-```
+![System Architecture](assets/architecture.png)
 
 ---
 
