@@ -1,182 +1,316 @@
 <div align="center">
-  <img src="frontend/public/logo.svg" alt="SağlıkCebim Logo" width="120" onerror="this.src='https://raw.githubusercontent.com/lucide-icons/lucide/main/icons/stethoscope.svg'"/>
+  <img src="frontend/public/logo.svg" alt="SağlıkCebim Logo" width="110"/>
 
-  # SağlıkCebim
-  **An Enterprise-Grade Multimodal Clinical Decision Support System & AI Medical Assistant**
+  <h1>SağlıkCebim</h1>
+  <p><strong>Turkish-language Clinical Decision Support System and offline AI medical assistant.</strong></p>
+  <p>Lab report parsing, chest X-ray analysis, and a multi-agent clinical chat pipeline, backed by evidence retrieval.</p>
 
-  [![FastAPI](https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi)](https://fastapi.tiangolo.com/)
-  [![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
-  [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
-  [![Docker](https://img.shields.io/badge/Docker-2CA5E0?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
-  [![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)](https://pytorch.org/)
-  [![Llama 3](https://img.shields.io/badge/AI-Llama_3-blueviolet?style=for-the-badge)](https://ollama.com/)
-  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
-
+  <p>
+    <img src="https://img.shields.io/badge/Python-3.11-3776AB?logo=python&logoColor=white" alt="Python 3.11"/>
+    <img src="https://img.shields.io/badge/FastAPI-005571?logo=fastapi&logoColor=white" alt="FastAPI"/>
+    <img src="https://img.shields.io/badge/React-18.3-20232A?logo=react&logoColor=61DAFB" alt="React 18.3"/>
+    <img src="https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white" alt="TypeScript"/>
+    <img src="https://img.shields.io/badge/PyTorch-2.1+-EE4C2C?logo=pytorch&logoColor=white" alt="PyTorch"/>
+    <img src="https://img.shields.io/badge/PostgreSQL-15-316192?logo=postgresql&logoColor=white" alt="PostgreSQL 15"/>
+    <img src="https://img.shields.io/badge/Docker-2CA5E0?logo=docker&logoColor=white" alt="Docker"/>
+    <img src="https://img.shields.io/badge/Llama_3-via_Ollama-blueviolet" alt="Llama 3"/>
+    <img src="https://img.shields.io/badge/License-MIT-yellow" alt="MIT License"/>
+  </p>
 </div>
 
 ---
 
 > [!CAUTION]
-> **Medical Disclaimer:** This project is a prototype developed for academic/demonstration purposes only. It is **not** intended to replace professional medical advice, diagnosis, or treatment. Always seek the advice of a qualified healthcare provider with any questions you may have regarding a medical condition.
+> **Medical disclaimer.** This project is a prototype built for academic and demonstration purposes. It is not a medical device and must not be used to replace professional diagnosis, advice, or treatment. Always consult a qualified healthcare provider.
 
-## 📖 Executive Summary
+## Overview
 
-**SağlıkCebim** is an advanced, Turkish-language medical assistant and Clinical Decision Support System (CDSS) built as a highly technical graduation project. The platform empowers healthcare professionals by automating clinical history taking, deeply analyzing medical lab reports, parsing complex radiology imagery, and proposing evidence-based treatment roadmaps. 
+SağlıkCebim is a Turkish clinical assistant that turns raw patient inputs into structured, safety-checked guidance. It reads lab report PDFs, analyzes chest X-rays, and answers clinical questions through a multi-agent pipeline, with every recommendation passed through a safety layer before it reaches the user.
 
-It implements a robust, privacy-first **Offline Multi-Agent Architecture** and integrates state-of-the-art **Computer Vision (CNNs)** and **Natural Language Processing (NLP)** models directly into a high-performance **FastAPI** backend, visualized through a stunning **React 18** PWA interface.
+The system is designed to be **offline and privacy-first**: the language model runs locally through [Ollama](https://ollama.com) (Llama 3), so patient text does not have to leave the host. It is **multimodal**, combining free-text symptoms, parsed lab values, and radiology images. The backend is a **FastAPI** service; the frontend is a **React 18** Progressive Web App.
 
----
+This is a graduation project. The architecture is real and runnable, but see [Known limitations](#known-limitations) for what is production-ready versus what is still a prototype.
 
-## 🏆 Technical Achievements & Core Capabilities
+## Key features
 
-### 1. Offline Multi-Agent Clinical Pipeline
-Unlike standard single-prompt LLM wrappers, SağlıkCebim utilizes a complex, 4-tier offline multi-agent orchestrator:
-* **IntentAgent:** Classifies 9 distinct medical intents (explain, recommend, compare, trend, correlate, danger, etc.) using 128 keywords and extracts over 122 test aliases.
-* **PersonalAgent:** Dynamically injects patient-specific historical test results from the PostgreSQL database into the AI context.
-* **KnowledgeAgent:** Parses a massive 103-test Medical Knowledge Base, identifying 13 distinct clinical correlation patterns (e.g., Metabolic Syndrome, Iron Deficiency Anemia, Hypothyroidism).
-* **AnswerAgent:** Synthesizes the data into safe, medically structured, and personalized Turkish responses with automated follow-up question generation.
+- **Lab report analysis** parses Turkish medical PDFs with `pdfplumber` and a set of Turkish-tuned regex patterns, then interprets values against reference ranges. (`services/pdf_parser.py`, `services/report_interpreter.py`, `services/medical_knowledge.py`)
+- **Radiology AI** classifies chest X-rays across the 14 NIH ChestX-ray14 findings and returns per-class probabilities with Grad-CAM heatmaps for explainability. (`services/radiology_ai.py`, `ml/`)
+- **Multi-agent clinical chat** orchestrates symptom extraction, patient history, a local LLM, a pharmacology firewall, and a safety validator into a single clinical response. (`services/diagnosis_agent.py`, `services/clinical/`)
+- **Evidence retrieval** queries external medical sources through pluggable providers (PubMed E-utilities, UpToDate, ClinicalKey) and ranks results with BM25. (`services/evidence/`)
+- **Anamnesis (clinical history)** tracks demographics, chronic conditions, medications, and allergies, and uses them to contextualize interpretation. (`api/v1/anamnesis.py`)
+- **Auth and safety** JWT authentication, `pbkdf2_sha256` password hashing, per-user data isolation on reports, request rate limiting, and Web Push notifications. (`core/security.py`, `api/v1/auth.py`, `main.py`)
 
-## ✨ Key Features
+## System architecture
 
-- 🤖 **Multi-Agent Clinical Chatbot & FlashClinicalKey**: Powered by a locally hosted **Llama 3** (via Ollama) and an underlying `ClinicalRoadmapEngine`. Features a specialized **ClinicalKey Chatbot** and **FlashClinicalKey** module to retrieve hyper-specific medical definitions directly from UpToDate and ClinicalKey data streams.
-  <br>![Multi-Agent Flow](assets/agent_flow.png)
-- 🩻 **Radiology AI (DenseNet-121)**: Upload chest X-rays to instantly receive probability scores for conditions like Pneumonia or Cardiomegaly, complete with diagnostic confidence scoring and Grad-CAM heatmaps.
-- 📄 **Intelligent PDF Parser & Weighted Analysis**: Parses raw medical lab reports using 9 distinct Regex patterns optimized for Turkish clinics. Applies **confidence weightings (ağırlıklandırmalar)** to differentiate between precise reference range matches and heuristic value extraction, ensuring maximum clinical safety.
-  <br>![PDF Parsing Flow](assets/pdf_flow.png)
-- 🔗 **Academic Evidence Engines (PubMed, ClinicalKey, UpToDate)**: Automatically queries external medical databases (PubMed E-utilities) and integrates with **ClinicalKey / UpToDate** standards to anchor clinical advice in up-to-date scientific literature.
-  <br>![PubMed Evidence Flow](assets/pubmed_flow.png)
-- 📋 **Comprehensive Anamnesis (Klinik Öykü)**: Built-in demographic, chronic disease, medication, and allergy tracking modules. The PersonalAgent dynamically adjusts normal ranges (e.g., gender/age-specific TSH or Ferritin) based on the user's anamnesis profile.
-- 🛡️ **Secure & Compliant Architecture**: Designed with robust JWT authentication, password hashing, and separated dataset environments to respect patient data privacy (KVKK/GDPR).
+```mermaid
+flowchart TD
+    subgraph Client
+        UI["React 18 PWA<br/>Vite, TypeScript, Tailwind, Radix UI"]
+    end
 
----
+    subgraph API["FastAPI backend"]
+        R["API routers<br/>/api/v1/*"]
+        SVC["Service layer"]
+    end
 
-## 🏗️ System Architecture
+    subgraph Services
+        DA["DiagnosisAgent<br/>+ ClinicalRoadmapEngine"]
+        RAD["RadiologyAI<br/>EfficientNet-B4 + Grad-CAM"]
+        EV["EvidenceEngine"]
+        PDF["PDF parser<br/>+ report interpreter"]
+    end
 
-![System Architecture](assets/architecture.png)
+    subgraph Data
+        DB[("Database<br/>SQLite dev / PostgreSQL target")]
+        UP[("Uploads<br/>PDFs, X-rays")]
+    end
 
----
+    subgraph External
+        OL["Ollama<br/>Llama 3 (local)"]
+        PM["PubMed E-utilities"]
+    end
 
-## 📸 Platform Interface
+    UI -->|HTTPS + JWT| R --> SVC
+    SVC --> DA & RAD & EV & PDF
+    DA --> OL
+    EV --> PM
+    SVC --> DB
+    PDF --> UP
+    RAD --> UP
+```
 
-The frontend is a Progressive Web Application (PWA) built with **React 18, Vite, TypeScript, Tailwind CSS, and Shadcn UI**, featuring a highly polished, award-winning dark-mode aesthetic with glassmorphism elements.
+### Clinical chat request flow
 
-### 1. Medical Dashboard
-*Monitors KPIs, patient statistics, and overall clinical metrics.*
-![Dashboard](assets/dashboard.jpg)
+```mermaid
+sequenceDiagram
+    participant U as User
+    participant API as /api/v1/chatbot
+    participant DA as DiagnosisAgent
+    participant DB as Anamnesis / DB
+    participant LLM as OllamaDiagnosisAgent (Llama 3)
+    participant PH as PharmacologyAgent
+    participant SV as SafetyValidator
 
-### 2. Radiology AI Analysis
-*Provides visual X-ray diagnostics, Grad-CAM heatmaps, and probability matrices.*
-![Radiology](assets/radiology.jpg)
+    U->>API: clinical question
+    API->>DA: analyze(complaint)
+    DA->>DB: fetch history, extract symptoms
+    DA->>LLM: build context, generate roadmap
+    LLM-->>DA: draft clinical response
+    DA->>PH: drug interaction / safety check
+    DA->>SV: forbidden-pattern + emergency-referral check
+    SV-->>API: validated, safe response
+    API-->>U: structured answer + disclaimer
+```
 
-### 3. Clinical Chatbot & Roadmap
-*A contextual chat interface linked directly to the patient's parsed medical records.*
-![Chatbot](assets/chatbot.jpg)
+## Multi-agent clinical pipeline
 
----
+The chat pipeline is an orchestration of small, single-purpose components rather than one large prompt:
 
-## 🛠️ Deployment & Quick Start
+- **`DiagnosisAgent`** is the orchestrator. It extracts symptoms from the message, pulls the patient's anamnesis from the database, and coordinates the downstream steps.
+- **`ClinicalRoadmapEngine`** builds the structured clinical roadmap and enriches it via `ClinicalKeyAgent`.
+- **`OllamaDiagnosisAgent`** talks to the locally hosted Llama 3 model through the Ollama HTTP API, with retry handling and optional JSON-mode output.
+- **`PharmacologyAgent`** acts as a firewall that checks for medication and interaction safety before a response is finalized.
+- **`SafetyValidator`** is the final gate. It scans the output for forbidden patterns (dosages, drug names, "no doctor needed" phrasing) and enforces emergency referral when red flags or critical risk are present.
 
-The system is fully containerized using Docker, allowing for rapid, reproducible deployments across any environment.
+## Radiology AI
+
+- **Model.** `EfficientNet-B4` (torchvision) with a 14-output classifier head, loaded from a checkpoint at `backend/models/`.
+- **Labels.** The 14 NIH ChestX-ray14 findings: Atelectasis, Cardiomegaly, Effusion, Infiltration, Mass, Nodule, Pneumonia, Pneumothorax, Consolidation, Edema, Emphysema, Fibrosis, Pleural Thickening, and Hernia, with Turkish display names.
+- **Thresholds.** Per-class decision thresholds are loaded from a JSON file rather than a single fixed 0.5 cutoff.
+- **Explainability.** Grad-CAM heatmap overlays highlight the regions driving each prediction. (`ml/gradcam.py`)
+- **Training and evaluation.** The `ml/` directory contains the full pipeline: dataset preparation, augmentation, training (`train.py`, `train_v2.py`), export, and evaluation scripts including ECE calibration (`evaluate_ece.py`).
+
+## Evidence engines
+
+Clinical advice can be anchored to external literature through provider abstractions in `services/evidence/`:
+
+- **PubMed** via the NCBI E-utilities API.
+- **UpToDate** and **ClinicalKey** via configurable providers (these require credentials or cookies supplied through environment variables).
+- Retrieved passages are ranked with **BM25** (`rank-bm25`) before being surfaced.
+
+## Tech stack
+
+| Layer | Technology | Version | Purpose |
+| --- | --- | --- | --- |
+| Backend | FastAPI | 0.100+ | REST API and OpenAPI docs |
+| Backend | SQLAlchemy | 2.0+ | ORM |
+| Backend | Alembic | 1.13+ | Database migrations |
+| Auth | python-jose, passlib | 3.5 / 1.7.4 | JWT and password hashing |
+| Parsing | pdfplumber, regex | 0.11.9 | Turkish lab PDF extraction |
+| LLM | langchain-ollama, Ollama | 1.1+ | Local Llama 3 inference |
+| Vision | PyTorch, torchvision | 2.1+ | EfficientNet-B4 X-ray model |
+| Retrieval | rank-bm25 | 0.2.2+ | Evidence ranking |
+| Rate limit | slowapi | 0.1.9+ | Per-route request limits |
+| Frontend | React | 18.3.1 | PWA UI |
+| Frontend | Vite, TypeScript | latest | Build and typing |
+| Frontend | Tailwind CSS, Radix UI, MUI | - | Styling and components |
+| Frontend | recharts | 2.15 | Charts and trends |
+| Infra | Docker, PostgreSQL, Nginx | 15 / alpine | Containerized deployment |
+
+## Project structure
+
+<details>
+<summary><b>📂 Click to expand repository structure</b></summary>
+
+```text
+SaglikCebim/
+├── backend/
+│   ├── app/
+│   │   ├── api/v1/          # Routers: auth, reports, radiology, chatbot, anamnesis, ...
+│   │   ├── core/            # database, security, config, logging
+│   │   ├── services/        # diagnosis_agent, pdf_parser, radiology_ai, report_interpreter
+│   │   │   ├── clinical/    # roadmap engine, safety validator, pharmacology agent
+│   │   │   └── evidence/    # pubmed / uptodate / clinicalkey providers, BM25 ranker
+│   │   ├── models/          # SQLAlchemy models
+│   │   └── main.py          # FastAPI app entrypoint
+│   ├── ml/                  # X-ray training, evaluation, Grad-CAM
+│   ├── tests/               # 28 test modules (pytest)
+│   └── requirements.txt
+├── frontend/
+│   ├── src/app/pages/       # Dashboard, Radyoloji, PDFAnaliz, Anamnez, Trendler, ...
+│   └── package.json
+├── docker-compose.yml       # Dev stack
+├── docker-compose.prod.yml  # Prod stack (Postgres + Nginx)
+└── README.md
+```
+
+</details>
+
+## Getting started
 
 ### Prerequisites
-* Docker & Docker Compose
-* Node 18+ & Python 3.11 (If running bare-metal)
-* Ollama (For localized Llama 3 execution)
 
-### 1. Clone the repository
+- **Python 3.11**
+- **Node.js 22**
+- **Docker** and Docker Compose (for the containerized path)
+- **Ollama** with the Llama 3 model pulled locally:
+  ```bash
+  ollama pull llama3
+  ```
+
+### Environment variables
+
+The backend reads configuration from environment variables (loaded from `backend/.env`). Create a `.env.example` and copy it to `.env`. **Never commit real secrets.**
+
+<details>
+<summary><b>⚙️ Click to view all Environment Variables</b></summary>
+
+| Variable | Required | Default | Purpose |
+| --- | --- | --- | --- |
+| `SECRET_KEY` | Yes | none (app fails if unset) | JWT signing key |
+| `ALGORITHM` | No | `HS256` | JWT algorithm |
+| `ACCESS_TOKEN_EXPIRE_MINUTES` | No | `30` | Token lifetime |
+| `CORS_ALLOW_ORIGINS` | Yes (dev) | empty | Comma-separated allowed origins |
+| `CORS_ALLOW_ORIGIN_REGEX` | No | none | Regex alternative for CORS |
+| `OLLAMA_BASE_URL` | No | `http://localhost:11434` | Ollama endpoint |
+| `OLLAMA_MODEL` | No | `llama3:latest` | Local model tag |
+| `OLLAMA_TIMEOUT` | No | `120` | LLM request timeout (s) |
+| `PUBMED_EMAIL` | No | placeholder | Contact for NCBI E-utilities |
+| `UPTODATE_API_KEY` | No | empty | UpToDate provider auth |
+| `CLINICALKEY_COOKIE` | No | empty | ClinicalKey provider auth |
+| `LOG_LEVEL` | No | `INFO` | Logging verbosity |
+| `VAPID_PUBLIC_KEY` / `VAPID_PRIVATE_KEY` / `VAPID_EMAIL` | For push | none | Web Push notifications |
+| `DATABASE_URL` | See note | `sqlite:///./dev.db` | Database connection (see [Known limitations](#known-limitations)) |
+
+Example `.env`:
+
+```env
+SECRET_KEY=change-me-to-a-long-random-string
+ACCESS_TOKEN_EXPIRE_MINUTES=30
+CORS_ALLOW_ORIGINS=http://localhost:5173
+OLLAMA_BASE_URL=http://localhost:11434
+OLLAMA_MODEL=llama3:latest
+```
+
+</details>
+
+### Run locally (without Docker)
+
+Backend:
+
 ```bash
-git clone https://github.com/TITANBGG/SaglikCebim.git
-cd SaglikCebim
+cd backend
+python -m venv .venv && source .venv/bin/activate   # Windows: .venv\Scripts\activate
+pip install -r requirements.txt
+uvicorn app.main:app --reload --port 8000
 ```
 
-### 2. Secure Initialization
-We provide a comprehensive Windows PowerShell script that securely generates cryptographic secrets and prepares the `.env` file automatically:
-```powershell
-.\setup.ps1 -Mode docker
-```
-*(For Linux/Mac, manually copy `.env.example` to `.env` and fill in secure values).*
+Frontend:
 
-### 3. Build the Cluster
 ```bash
-docker-compose up --build -d
+cd frontend
+npm install
+npm run dev
 ```
-* **Frontend SPA:** [http://localhost:5173](http://localhost:5173) 
-* **Backend Swagger Docs:** [http://localhost:8000/docs](http://localhost:8000/docs)
 
----
+The API is then at `http://localhost:8000` and the app at the Vite dev URL.
 
-## 📂 Datasets & Data Privacy
+### Run with Docker
 
-To ensure maximum repository performance and strictly comply with medical data privacy standards (KVKK/GDPR), **large training datasets, real patient databases, and model weights are intentionally excluded from this repository.**
-- **Testing Directory**: A `sample_data/` directory is provided. Place your anonymized dummy X-ray images and test PDF reports here to safely test the AI pipelines locally without committing them to version control.
+Development stack:
 
----
+```bash
+docker compose up --build
+```
 
-## 📸 Screenshots
+Production stack (PostgreSQL + Nginx). Provide a `.env` with the production values first:
 
-Here are the real application interfaces from the SağlıkCebim platform:
+```bash
+docker compose -f docker-compose.prod.yml up --build
+```
 
-### 1. User Login
-![Login Screen](assets/login.png)
+## API reference
 
-### 2. PDF Analysis & Personalization Dashboard
-![PDF Analysis Details](assets/dashboard.png)
+Interactive documentation is generated automatically:
 
-### 3. PubMed Integration
-![PubMed Recommendations](assets/pubmed.png)
+- **Swagger UI:** `http://localhost:8000/docs`
+- **ReDoc:** `http://localhost:8000/redoc`
 
-### 4. ClinicalKey / UpToDate AI Evidence Module
-![ClinicalKey Evidence Engine](assets/clinicalkey.png)
+<details>
+<summary><b>🌐 Click to view Key API Endpoints</b></summary>
 
----
+| Group | Prefix | Responsibility |
+| --- | --- | --- |
+| Auth | `/api/v1/auth` | Register, login, current user |
+| Reports | `/api/v1/reports` | Upload, list, parse, interpret lab PDFs |
+| Radiology | `/api/v1/radiology` | X-ray upload and analysis |
+| Chatbot | `/api/v1/chatbot` | Multi-agent clinical chat |
+| Anamnesis | `/api/v1/anamnesis` | Clinical history management |
+| Evidence | `/api/v1/evidence` | Literature retrieval |
+| Roadmap | `/api/v1/roadmap` | Clinical roadmap sessions |
+| Notifications | `/api/v1/notifications` | Web Push notifications |
 
-## 📊 Technical Performance & Metrics
+</details>
 
-The system has been rigorously tested as part of the official graduation thesis. The following metrics demonstrate the enterprise-grade reliability of SağlıkCebim:
+## Testing
 
-### 1. Multi-Agent Intent Detection Success
-Tested across 40 complex clinical scenarios involving mixed intents (e.g., asking for department referral + nutritional advice simultaneously):
-* **Intent Classification Accuracy:** **92.5%**
-* **Memory Retention & Context Switching:** **100%** successful context carry-over during session.
+The backend ships with 28 pytest modules covering the PDF parser, agents, radiology inference, auth, report interpretation, safety validation, and end-to-end and golden-scenario flows.
 
-### 2. PDF Parsing Reliability (Turkish Laboratory Formats)
-Tested on 100 real-world, anonymized Turkish lab reports representing ~5,000 distinct measurements across 9 layout structures:
-* **Standard Table Format:** **98%**
-* **Parenthesized Reference Format:** **96%**
-* **Pipe-Delimited Layout:** **94%**
-* **Overall Parsing Success Rate:** **95%** 
+```bash
+cd backend
+pytest
+```
 
-### 3. Radiology AI (DenseNet-121) Accuracy
-Evaluated on the 10% test split of the NIH ChestX-ray14 dataset using Area Under the Receiver Operating Characteristic Curve (AUROC).
-* **Pneumonia:** 0.8734
-* **Edema:** 0.8523
-* **Consolidation:** 0.8401
-* **Infiltration:** 0.8234
-* **Cardiomegaly:** 0.8145
-* **Average AUROC (across 14 pathologies):** **0.8079** (Outperforming the baseline AlexNet 0.7450 model).
+## Known limitations
 
-### 4. End-to-End System Integration Tests
-A fully automated `pytest` suite was used to test the Dockerized CI/CD pipeline:
-* **Authentication:** 12/12 Passed (100%)
-* **Report Management:** 18/18 Passed (100%)
-* **Chatbot Flow:** 10/10 Passed (100%)
-* **Total Integration Score:** **67/67 Tests Passed (100%)**
+This is a prototype, and the README aims to describe it honestly:
 
----
+- **Database.** `core/database.py` currently hardcodes a SQLite connection and does not read `DATABASE_URL` from the environment yet, even though `docker-compose.prod.yml` provisions PostgreSQL 15. SQLite is the working default; wiring the app to read `DATABASE_URL` is required before the Postgres path is truly active.
+- **Not for clinical use.** The models and safety layer are for demonstration. Outputs are not validated for real patient care.
+- **External providers.** UpToDate and ClinicalKey integrations require credentials that are not bundled; without them, evidence retrieval falls back to PubMed.
 
-## 🤝 Contributing
+## Security and privacy
 
-Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+- JWT-based authentication with `pbkdf2_sha256` password hashing.
+- Per-user isolation on report queries (`Report.user_id` filtering) to prevent cross-account access.
+- Per-route rate limiting via `slowapi`.
+- Local LLM inference to keep patient text on the host.
+- The project targets KVKK and GDPR alignment as a design goal.
 
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+## License
 
-## 📝 License
+Released under the [MIT License](LICENSE).
 
-Distributed under the MIT License. See `LICENSE` for more information.
+## Acknowledgments
 
----
-*Developed with ❤️ as a comprehensive graduation project demonstrating the bleeding-edge capabilities of AI in modern clinical workflows.*
+Built as a graduation project. Chest X-ray classification is trained on the NIH ChestX-ray14 dataset; literature retrieval uses the NCBI PubMed E-utilities.
