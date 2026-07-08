@@ -1,5 +1,4 @@
 
-https://youtu.be/Gd3x-HQGDXs
 
 
 <div align="center">
@@ -23,6 +22,14 @@ https://youtu.be/Gd3x-HQGDXs
 </div>
 
 ---
+
+<div align="center">
+  <br>
+  <a href="https://youtu.be/Gd3x-HQGDXs" target="_blank">
+    <img src="https://img.youtube.com/vi/Gd3x-HQGDXs/maxresdefault.jpg" alt="SağlıkCebim Demo Video" width="800" style="border-radius: 10px; box-shadow: 0px 4px 10px rgba(0,0,0,0.5);"/>
+  </a>
+  <p><em>🎬 Click the image above to watch the SağlıkCebim Demo Video!</em></p>
+</div> 
 
 > [!CAUTION]
 > **Medical disclaimer.** This project is a prototype built for academic and demonstration purposes. It is not a medical device and must not be used to replace professional diagnosis, advice, or treatment. Always consult a qualified healthcare provider.
