@@ -290,6 +290,15 @@ Interactive documentation is generated automatically:
 | Evidence | `/api/v1/evidence` | Literature retrieval |
 | Roadmap | `/api/v1/roadmap` | Clinical roadmap sessions |
 | Notifications | `/api/v1/notifications` | Web Push notifications |
+
+</details>
+
+## 📸 Screenshots & Diagrams
+
+<details>
+<summary><b>🖼️ Click to view Gallery</b></summary>
+<br>
+
 <img width="538" height="1021" alt="Ekran görüntüsü 2026-05-19 001645" src="https://github.com/user-attachments/assets/8454457a-4670-4e15-8b83-11bcf741ff71" />
 <img width="1912" height="1012" alt="Ekran görüntüsü 2026-05-19 000948" src="https://github.com/user-attachments/assets/b6d82bf7-a2a4-4e0e-84fa-42d86405585d" />
 <img width="1912" height="1012" alt="Ekran görüntüsü 2026-05-19 000948 (2)" src="https://github.com/user-attachments/assets/a39daf91-9a38-4c0d-832b-4b480d7ce729" />
